@@ -280,4 +280,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Contact Form to WhatsApp ---
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Evita recargar la página
+
+            const nombre = document.getElementById('nombreContacto').value.trim();
+            const ciudad = document.getElementById('ciudadContacto').value.trim();
+            const edad = document.getElementById('edadContacto').value.trim();
+            const busqueda = document.getElementById('busquedaContacto').value.trim();
+
+            const mensaje = `Hola soy ${nombre}, escribo de la ciudad de ${ciudad} y mi peque tiene ${edad} y estoy buscando ${busqueda}`;
+            
+            // Número especificado: 222 402 1886 (código país 52)
+            const telefono = '522224021886'; 
+            const whatsappUrl = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+    }
 });

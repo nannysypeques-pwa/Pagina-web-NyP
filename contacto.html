@@ -38,11 +38,29 @@
         }
 
         .info-item {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .info-item a {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            background-color: var(--color-white);
+            padding: 1.25rem 1.5rem;
+            border-radius: 15px;
+            text-decoration: none;
+            color: var(--color-text-dark);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            width: 100%;
+            border: 1px solid rgba(255, 143, 179, 0.1);
+        }
+
+        .info-item a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 143, 179, 0.25);
+            border-color: var(--color-pink);
         }
 
         .info-item i {
@@ -113,7 +131,7 @@
             </h1>
             <p
                 style="font-size: 1.25rem; max-width: 600px; margin: 0 auto; color: var(--color-white); padding-bottom: 1rem;">
-                El staff más capacitado de México, listo para conocer a tu peque.
+                Tú y tu familia merecen la tranquilidad que Nannys y Peques puede ofrecer.
             </p>
         </div>
     </section>
@@ -124,22 +142,29 @@
 
             <div class="contact-form">
                 <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Escríbenos</h2>
-                <p style="color: var(--color-text-light); margin-bottom: 2rem;">¿Prefieres que te contactemos nosotros?
+                <p style="color: var(--color-text-light); margin-bottom: 2rem;">¿Quieres hablar con asesor?
                     Llena estos datos.</p>
 
-                <form action="#" method="POST">
+                <form id="contactForm">
                     <div class="form-group">
                         <label>Nombre Completo</label>
-                        <input type="text" class="form-control" placeholder="Ej. Ana Ramírez">
+                        <input type="text" id="nombreContacto" class="form-control" placeholder="Ej. Ana Ramírez"
+                            maxlength="200" required>
                     </div>
                     <div class="form-group">
-                        <label>Teléfono (WhatsApp)</label>
-                        <input type="tel" class="form-control" placeholder="10 dígitos">
+                        <label>Ciudad</label>
+                        <input type="text" id="ciudadContacto" class="form-control" placeholder="Ej. Puebla"
+                            maxlength="200" required>
                     </div>
                     <div class="form-group">
-                        <label>Mensaje Corto</label>
-                        <textarea class="form-control" rows="4"
-                            placeholder="Cuéntanos la edad de tu peque y cómo necesitas apoyo..."></textarea>
+                        <label>Edad del peque</label>
+                        <input type="text" id="edadContacto" class="form-control" placeholder="Ej. 2 años"
+                            maxlength="200" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cuéntanos qué estás buscando</label>
+                        <textarea id="busquedaContacto" class="form-control" rows="4"
+                            placeholder="Ej. Cuidados por las tardes..." maxlength="200" required></textarea>
                     </div>
                     <button type="submit" class="btn-primary btn-large" style="width: 100%;">Enviar Datos</button>
                 </form>
@@ -152,7 +177,7 @@
 
                 <div class="info-item">
                     <a href="https://wa.me/522224021886?text=Hola,%20vi%20su%20información%20en%20su%20pagina%20web%20y%20me%20gustaría%20resolver%20algunas%20dudas"
-                        target="_blank" style="display: flex; align-items: center; gap: 1rem;">
+                        target="_blank">
                         <i class="fas fa-phone"></i>
                         <div>
                             <strong>Ventas (Padres de Familia)</strong><br>
@@ -163,7 +188,7 @@
 
                 <div class="info-item">
                     <a href="https://wa.me/522203215455?text=Hola,%20me%20gustaría%20poder%20hacer%20una%20alianza%20con%20ustedes%20para%20crecer%20juntos"
-                        target="_blank" style="display: flex; align-items: center; gap: 1rem;">
+                        target="_blank">
                         <i class="fas fa-phone-alt"></i>
                         <div>
                             <strong>Relaciones Públicas (Alianzas)</strong><br>
@@ -173,7 +198,7 @@
                 </div>
 
                 <div class="info-item">
-                    <a href="mailto:nannysypeques@gmail.com" style="display: flex; align-items: center; gap: 1rem;">
+                    <a href="mailto:nannysypeques@gmail.com">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <strong>Email General</strong><br>
@@ -183,12 +208,13 @@
                 </div>
 
                 <div class="info-item">
-                    <a href="http://reclutamiento.nannysypeques.com.mx" target="_blank"
-                        style="display: flex; align-items: center; gap: 1rem;">
+                    <a href="http://reclutamiento.nannysypeques.com.mx" target="_blank">
                         <i class="fas fa-briefcase" style="color: var(--color-cyan);"></i>
                         <div>
                             <strong>Bolsa de Trabajo</strong><br>
-                            Únete a nuestro equipo
+                            <span class="btn-primary"
+                                style="display: inline-block; margin-top: 0.5rem; padding: 0.4rem 1rem; font-size: 0.85rem; border-radius: 20px; transition: none;">Únete
+                                a nuestro equipo</span>
                         </div>
                     </a>
                 </div>
