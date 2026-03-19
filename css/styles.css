@@ -1811,3 +1811,78 @@ a {
         padding: 12px 20px;
     }
 }
+
+/* --- Partner Logos Marquee --- */
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    z-index: 2;
+}
+
+.marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, white 0%, transparent 100%);
+}
+
+.marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, white 0%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    width: max-content;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.track-left {
+    animation: scrollLeft 30s linear infinite;
+}
+
+.track-right {
+    animation: scrollRight 30s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1.5rem)); } 
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(calc(-50% - 1.5rem)); }
+    100% { transform: translateX(0); }
+}
+
+.partner-logo {
+    height: 65px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    mix-blend-mode: multiply;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
