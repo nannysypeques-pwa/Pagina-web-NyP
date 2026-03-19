@@ -122,7 +122,7 @@ function gameOver() {
     finalScoreElement.textContent = Math.floor(score);
     gameOverScreen.querySelector('h3').textContent = '¡Servicio interrumpido!';
     gameOverScreen.querySelector('h3').style.color = 'var(--color-pink)';
-    gameOverScreen.querySelector('p').textContent = 'No pudiste llegar a tiempo esta vez.';
+    gameOverScreen.querySelector('p').textContent = 'Tu nanny no pudo llegar a tiempo.';
     gameOverScreen.classList.remove('hidden');
 }
 
