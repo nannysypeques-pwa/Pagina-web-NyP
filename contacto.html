@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nannys y Peques - Contacto y Cotizaciones</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: -5rem auto 5rem;
+            position: relative;
+            z-index: 5;
+            background: var(--color-white);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-info-block {
+            background-color: var(--color-pink-soft);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .contact-info-block h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--color-pink);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .info-item i {
+            color: var(--color-pink);
+            font-size: 1.5rem;
+        }
+        
+        /* Contact Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-pink);
+            box-shadow: 0 0 0 3px rgba(255, 143, 179, 0.2);
+        }
+
+        @media (max-width: 900px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/Logo horizontal.png" alt="Nannys y Peques Logo" class="nav-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Diferenciadores</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="proceso.html">Cómo Contratar</a>
+                <a href="contacto.html" class="btn-primary">Contacto</a>
+            </nav>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <section class="hero hero-internal" style="background-color: var(--color-pink); min-height: 40vh;">
+        <div class="container center text-white">
+            <h1 class="section-title text-white">Estamos a un <span style="color: var(--color-yellow);">mensaje de distancia</span></h1>
+            <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto;">El staff más capacitado de México, listo para conocer a tu peque.</p>
+        </div>
+    </section>
+
+    <!-- Contenedor de formulario y data -->
+    <div class="container">
+        <div class="contact-container">
+            
+            <div class="contact-form">
+                <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Escríbenos</h2>
+                <p style="color: var(--color-text-light); margin-bottom: 2rem;">¿Prefieres que te contactemos nosotros? Llena estos datos.</p>
+                
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" class="form-control" placeholder="Ej. Ana Ramírez">
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono (WhatsApp)</label>
+                        <input type="tel" class="form-control" placeholder="10 dígitos">
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje Corto</label>
+                        <textarea class="form-control" rows="4" placeholder="Cuéntanos la edad de tu peque y cómo necesitas apoyo..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-large" style="width: 100%;">Enviar Datos</button>
+                </form>
+            </div>
+
+            <div class="contact-info-block">
+                <h3>Contacto Directo</h3>
+                <p style="margin-bottom: 2.5rem;">Elige el área con la que deseas comunicarte para una atención inmediata.</p>
+                
+                <div class="info-item">
+                    <a href="https://wa.me/522224021886?text=Hola,%20vi%20su%20información%20en%20su%20pagina%20web%20y%20me%20gustaría%20resolver%20algunas%20dudas" target="_blank" style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Ventas (Padres de Familia)</strong><br>
+                            222 402 1886
+                        </div>
+                    </a>
+                </div>
+
+                <div class="info-item">
+                    <a href="https://wa.me/522203215455?text=Hola,%20me%20gustaría%20poder%20hacer%20una%20alianza%20con%20ustedes%20para%20crecer%20juntos" target="_blank" style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Relaciones Públicas (Alianzas)</strong><br>
+                            220 321 5455
+                        </div>
+                    </a>
+                </div>
+
+                <div class="info-item">
+                    <a href="mailto:nannysypeques@gmail.com" style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email General</strong><br>
+                            nannysypeques@gmail.com
+                        </div>
+                    </a>
+                </div>
+
+                <div class="info-item">
+                    <a href="http://reclutamiento.nannysypeques.com.mx" target="_blank" style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-briefcase" style="color: var(--color-cyan);"></i>
+                        <div>
+                            <strong>Bolsa de Trabajo</strong><br>
+                            Únete a nuestro equipo
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer replicado -->
+    <footer class="footer">
+        <div class="container grid-footer">
+            <div class="footer-brand">
+                <p>En Nannys y Peques cuidamos lo que más amas.</p>
+                <p>Tu tranquilidad y la de tu familia es nuestra prioridad.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/message/FT6F6WXPLP3YI1" target="_blank" class="whatsapp"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/nannysypeques" target="_blank" class="facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/nannysypeques/" target="_blank" class="instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@nannys_y_peques" target="_blank" class="tiktok"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Sucursales</h4>
+                <ul>
+                    <li><a href="https://share.google/xhs0fGlsFOsEAFMGS" target="_blank">Puebla</a></li>
+                    <li><a href="https://share.google/IZb2u4sQF7hioZkr6" target="_blank">Xalapa</a></li>
+                    <li><a href="https://share.google/nO34mhj0TP0703lCx" target="_blank">Querétaro</a></li>
+                    <li><a href="https://share.google/VLfaHf6RKEW2fqOil" target="_blank">CDMX</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><a href="https://wa.me/522224021886?text=Hola,%20vi%20su%20información%20en%20su%20pagina%20web%20y%20me%20gustaría%20resolver%20algunas%20dudas" target="_blank"><i class="fas fa-phone"></i> <strong>Ventas:</strong> 222 402 1886</a></p>
+                <p><a href="https://wa.me/522203215455?text=Hola,%20me%20gustaría%20poder%20hacer%20una%20alianza%20con%20ustedes%20para%20crecer%20juntos" target="_blank"><i class="fas fa-phone-alt"></i> <strong>RP:</strong> 220 321 5455</a></p>
+                <p><a href="mailto:nannysypeques@gmail.com"><i class="fas fa-envelope"></i> nannysypeques@gmail.com</a></p>
+                <p><a href="http://reclutamiento.nannysypeques.com.mx" target="_blank"><i class="fas fa-briefcase"></i> reclutamiento.nannysypeques.com.mx</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container center" style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <p>&copy; 2026 Nannys y Peques. Todos los derechos reservados.</p>
+                <a href="#" class="aviso-privacidad-link" style="color: var(--color-text-light); font-size: 0.9rem; text-decoration: underline;">Aviso de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

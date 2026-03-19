@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nannys y Peques - Planes y Servicios Especializados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Estilos específicos para la sección de servicios detallada */
+        .service-detail-card {
+            background: var(--color-white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 4rem;
+            display: flex;
+            overflow: hidden;
+            border: 1px solid #f1f3f4;
+        }
+
+        .service-detail-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-content {
+            padding: 4rem;
+            flex: 1;
+        }
+
+        .service-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .visual-blob {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            /* Placeholder para el blob/fondo del lado visual */
+        }
+
+        .visual-icon {
+            font-size: 8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-content .subtitle {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .features-check {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .features-check li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 1.05rem;
+            color: var(--color-text-dark);
+        }
+
+        .features-check i {
+            margin-top: 5px;
+        }
+
+        /* Colores específicos de sección visual */
+        .card-pink .visual-blob {
+            background: var(--color-pink);
+        }
+
+        .card-pink .service-content h2,
+        .card-pink .features-check i {
+            color: var(--color-pink);
+        }
+
+        .card-pink .visual-icon {
+            color: var(--color-pink);
+        }
+
+        .card-cyan .visual-blob {
+            background: var(--color-cyan);
+        }
+
+        .card-cyan .service-content h2,
+        .card-cyan .features-check i {
+            color: var(--color-cyan);
+        }
+
+        .card-cyan .visual-icon {
+            color: var(--color-cyan);
+        }
+
+        .card-yellow .visual-blob {
+            background: var(--color-yellow);
+        }
+
+        .card-yellow .service-content h2,
+        .card-yellow .features-check i {
+            color: #D97706;
+        }
+
+        .card-yellow .visual-icon {
+            color: #D97706;
+        }
+
+        @media (max-width: 900px) {
+
+            .service-detail-card,
+            .service-detail-card:nth-child(even) {
+                flex-direction: column-reverse;
+            }
+
+            .service-visual {
+                padding: 4rem 0;
+            }
+
+            .service-content {
+                padding: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/Logo horizontal.png" alt="Nannys y Peques Logo" class="nav-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Diferenciadores</a>
+                <a href="servicios.html" style="color: var(--color-pink); font-weight: 700;">Servicios</a>
+                <a href="proceso.html">Cómo Contratar</a>
+                <a href="contacto.html" class="btn-primary">Contacto</a>
+            </nav>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <section class="hero hero-internal" style="background-color: #FAF8F5;">
+        <div class="container center">
+            <span class="badge" style="background: var(--color-pink-light); color: var(--color-text-dark);">Soluciones
+                Personalizadas</span>
+            <h1 class="section-title">El modelo perfecto de cuidado<br><span class="highlight-pink">para tu peque</span>
+            </h1>
+            <p style="font-size: 1.25rem; color: var(--color-text-light); max-width: 700px; margin: 0 auto;">Una Nanny
+                para cada momento de tu vida y la de tu peque. Conoce como podemos ayudarte en tu día a día y ser tu
+                mejor aliado.
+            </p>
+        </div>
+    </section>
+
+    <!-- Catálogo de Servicios Detallado -->
+    <section class="section-padding" style="padding-top: 2rem;">
+        <div class="container">
+
+            <!-- 1. Neuronanny -->
+            <div class="service-detail-card card-pink">
+                <div class="service-content">
+                    <h2>Neuronanny (servicio fijo)</h2>
+                    <p class="subtitle"><strong>¿Para quién es?</strong> Ideal para acompañar a tu peque en su
+                        crecimiento del día a día, estimulando sus habilidades cognitivas, motrices y de lenguaje.
+                        Mientras atendemos sus necesidades básicas y rutina diaria de alimentación, higiene y descanso.
+                    </p>
+
+                    <ul class="features-check">
+                        <li><i class="fas fa-check-circle"></i> Planeación semanal de actividades (App Nannys y Peques).
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> Seguimiento diario de estimulación con evaluaciones de
+                            su desarrollo de acuerdo a la etapa de la infancia en la que este tu peque (5 áreas del
+                            desarrollo).</li>
+                        <li><i class="fas fa-check-circle"></i> Bitácora de actividades, rutina, higiene, alimentación y
+                            cuidado del día (App Nannys y Peques).</li>
+                        <li><i class="fas fa-check-circle"></i> Cambios de pañal, preparación de mamilas, proporcional
+                            alimentos, ayuda en actividades academicas, juego libre, acompañar en la rutina diaria de la
+                            familia y mucho más.</li>
+                    </ul>
+
+                    <a href="https://wa.me/522224021886?text=Hola,%20me%20interesa%20mucho%20contratar%20y%20saber%20más%20sobre%20el%20servicio%20de%20neuronanny%20para%20mi%20peque%20de%20______%20en%20la%20ciudad%20de%20_________,%20por%20favor."
+                        class="btn-outline" target="_blank">Cotizar mi Neuronanny</a>
+                </div>
+                <div class="service-visual">
+                    <div class="visual-blob"></div>
+                    <i class="fas fa-brain visual-icon"></i>
+                </div>
+            </div>
+
+            <!-- 2. Nanny Eventual -->
+            <div class="service-detail-card card-cyan">
+                <div class="service-content">
+                    <h2>Nanny Eventual</h2>
+                    <p class="subtitle"><strong>¿Para quién es?</strong> Papás que necesitan un respiro, ir al cine o
+                        una cena en pareja, atender un compromiso laboral, ayuda extra para ir de compras, a una cita
+                        médica o te
+                        acompañamos a una fiesta o reunión.</p>
+
+                    <ul class="features-check">
+                        <li><i class="fas fa-check-circle"></i> Servicios desde 3 horas al día. Flexibilidad total de
+                            horarios con la máxima garantía de
+                            seguridad.</li>
+                        <li><i class="fas fa-check-circle"></i> Ideal para imprevistos o necesidades puntuales del día a
+                            día.</li>
+                        <li><i class="fas fa-check-circle"></i> Días más tranquilos al tener ayuda extra para tus
+                            peques.</li>
+                    </ul>
+
+                    <a href="https://wa.me/522224021886?text=Hola,%20me%20gustaría%20agendar%20una%20Nanny%20Eventual,%20por%20favor."
+                        class="btn-outline btn-cyan-hover"
+                        style="border-color: var(--color-cyan); color: var(--color-cyan);" target="_blank">Agendar Nanny
+                        Eventual</a>
+                </div>
+                <div class="service-visual">
+                    <div class="visual-blob"></div>
+                    <i class="fas fa-sun visual-icon"></i>
+                </div>
+            </div>
+
+            <!-- 3. Nanny Nocturna -->
+            <div class="service-detail-card card-yellow">
+                <div class="service-content">
+                    <h2>Nanny Nocturna</h2>
+                    <p class="subtitle"><strong>¿Para quién es?</strong> Padres que necesitan descansar, atender
+                        cuestiones laborales que se extienden o que tienen compromisos sociales nocturnos y quieren
+                        disfrutar con total tranquilidad.</p>
+
+                    <ul class="features-check">
+                        <li><i class="fas fa-check-circle"></i> Acompañamiento especializado en rutinas de sueño.</li>
+                        <li><i class="fas fa-check-circle"></i> Atención a despertas nocturnos, alimentación y cambio de
+                            pañal.</li>
+                        <li><i class="fas fa-check-circle"></i> Descansa sin culpa sabiendo que tu peque está en las
+                            mejores manos.</li>
+                    </ul>
+
+                    <a href="https://wa.me/522224021886?text=Hola,%20me%20gustaría%20agendar%20el%20servicio%20de%20Nanny%20Nocturna,%20por%20favor."
+                        class="btn-outline btn-yellow-hover" style="border-color: #D97706; color: #D97706;"
+                        target="_blank">Agendar Nanny
+                        Nocturna</a>
+                </div>
+                <div class="service-visual">
+                    <div class="visual-blob"></div>
+                    <i class="fas fa-moon visual-icon"></i>
+                </div>
+            </div>
+
+            <!-- 4. Miss Nanny (Refuerzo Escolar) -->
+            <div class="service-detail-card card-pink">
+                <div class="service-content">
+                    <h2>Miss Nanny (Refuerzo Escolar)</h2>
+                    <p class="subtitle"><strong>¿Para quién es?</strong> Niños en etapa escolar que requieren apoyo
+                        profesional con tareas y regularización desde el respeto.</p>
+
+                    <ul class="features-check">
+                        <li><i class="fas fa-check-circle"></i> Refuerzo académico especializado, siguiendo el plan
+                            escolar del peque (lectura, escritura,
+                            matemáticas).</li>
+                        <li><i class="fas fa-check-circle"></i> Fomento de hábitos saludables de aprendizaje y estudio.
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> Enfoque sin gritos: empatía y metodologías pedagógicas
+                            actuales.</li>
+                        <li><i class="fas fa-check-circle"></i> Equilibrio con actividades lúdicas pos-escuela.</li>
+                    </ul>
+
+                    <a href="https://wa.me/522224021886?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20el%20servicio%20de%20Miss%20Nanny,%20por%20favor."
+                        class="btn-outline" style="border-color: var(--color-pink); color: var(--color-pink);"
+                        target="_blank">Cotizar Miss Nanny</a>
+                </div>
+                <div class="service-visual">
+                    <div class="visual-blob"></div>
+                    <i class="fas fa-book-open-reader visual-icon"></i>
+                </div>
+            </div>
+
+
+
+            <!-- 5. Nanny para Fiestas -->
+            <div class="service-detail-card card-cyan">
+                <div class="service-content">
+                    <h2 style="color: var(--color-cyan);">Nanny en Fiestas o Eventos</h2>
+                    <p class="subtitle"><strong>¿Para quién es?</strong> Anfitriones de bodas, bautizos o fiestas
+                        privadas que desean disfrutar sabiendo que los peques están seguros y divirtiéndose.</p>
+
+                    <ul class="features-check">
+                        <li><i class="fas fa-check-circle" style="color: var(--color-cyan);"></i> Rincón infantil
+                            (Kids Corner) con actividades, experimentos, manualidades, decoraciones, juegos organizados
+                            y mucho más.</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--color-cyan);"></i> Dinámicas de
+                            integración divertidísimas adaptables al lugar.</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--color-cyan);"></i> Tú disfrutas tu
+                            evento y los peque invitados viven una gran experiencia.</li>
+                    </ul>
+
+                    <a href="https://wa.me/522224021886?text=Hola,%20quisiera%20cotizar%20un%20paquete%20de%20nannies%20para%20mi%20evento,%20por%20favor."
+                        class="btn-primary" style="background: var(--color-cyan); border-color: var(--color-cyan);"
+                        target="_blank">Cuidamos tu evento</a>
+                </div>
+                <div class="service-visual">
+                    <div class="visual-blob" style="background: var(--color-cyan);"></div>
+                    <i class="fas fa-champagne-glasses visual-icon" style="color: var(--color-cyan);"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección Filosofía Corazón ASC -->
+    <section class="philosophy-section section-padding" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="philosophy-card" style="padding: 3rem 2rem 10rem;">
+                <div class="philosophy-header text-center"
+                    style="display: flex; flex-direction: column; align-items: center; margin-bottom: 2rem;">
+                    <span class="badge"
+                        style="background: var(--color-pink-light); color: var(--color-pink-strong); width: fit-content; margin-bottom: 1.5rem; padding: 0.5rem 1.2rem; font-weight: 700; letter-spacing: 0.5px;">Nuestra
+                        Esencia cada día</span>
+                    <h2
+                        style="font-size: 2.8rem; color: var(--color-text-dark); line-height: 1.2; margin-bottom: 0.5rem;">
+                        Nuestro <b style="color: var(--color-pink);">Corazón ASC</b></h2>
+                    <p class="subtitle"
+                        style="margin-top: 0.5rem; font-size: 1.1rem; color: var(--color-text-light); max-width: 85%; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                        Todos nuestros servicios son atendidos por nannys amorosas que siguen nuestros valores. El
+                        Corazón ASC es nuestra esencia y la filosofía que guía cada uno de nuestros pasos para brindarte
+                        la mejor experiencia de cuidado. </p>
+                </div>
+
+                <div class="philosophy-layout">
+                    <!-- AMAR: Arriba Izquierda -->
+                    <div class="philosophy-item-alt pos-amar bg-yellow-soft">
+                        <span class="mini-icon item-yellow"><i class="fas fa-heart"></i></span>
+                        <h3 class="item-yellow">AMAR</h3>
+                        <p>Amamos profundamente lo que hacemos. Nuestra mayor pasión es ver cómo cada peque crece,
+                            aprende y florece a nuestro lado cada día.</p>
+                    </div>
+
+                    <!-- SERVIR: Arriba Derecha -->
+                    <div class="philosophy-item-alt pos-servir bg-cyan-soft">
+                        <span class="mini-icon item-cyan"><i class="fas fa-handshake-angle"></i></span>
+                        <h3 class="item-cyan">SERVIR</h3>
+                        <p>Servir es nuestra vocación. Brindamos lo mejor de nosotras con energía y dedicación, buscando
+                            ser tu apoyo incondicional.</p>
+                    </div>
+
+                    <!-- CUIDAR: Abajo -->
+                    <div class="philosophy-item-alt pos-cuidar bg-pink-soft">
+                        <span class="mini-icon item-pink"><i class="fas fa-hand-holding-heart"></i></span>
+                        <h3 class="item-pink">CUIDAR</h3>
+                        <p>Cuidamos con el corazón. Creamos un ambiente de amor genuino donde cada detalle cuenta para
+                            tu tranquilidad y la seguridad de tu peque.</p>
+                    </div>
+
+                    <!-- Centro Imagen 3D -->
+                    <div class="philosophy-center">
+                        <img src="img/3D.png" alt="Corazón ASC" class="img-3d">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Banner -->
+    <section class="section-padding bg-gradient center text-white">
+        <div class="container">
+            <h2 class="section-title text-white">¿No sabes qué servicio necesitas?</h2>
+            <p class="subtitle text-white" style="margin-bottom: 2rem;">No te preocupes. Nuestro gran equipo te
+                hará algunas preguntas muy sencillas para poderte ofrecer el servicio personalizado que tú y tu familia
+                necesitan.</p>
+            <a href="https://wa.me/522224021886?text=Hola,%20necesito%20ayuda%20para%20elegir%20el%20servicio%20adecuado%20para%20mi%20familia,%20por%20favor"
+                class="btn-primary btn-large"
+                style="background: var(--color-white); color: var(--color-pink) !important;" target="_blank">Cotiza
+                GRATIS</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container grid-footer">
+            <div class="footer-brand">
+                <p>En Nannys y Peques cuidamos lo que más amas.</p>
+                <p>Tu tranquilidad y la de tu familia es nuestra prioridad.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/message/FT6F6WXPLP3YI1" target="_blank" class="whatsapp"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/nannysypeques" target="_blank" class="facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/nannysypeques/" target="_blank" class="instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@nannys_y_peques" target="_blank" class="tiktok"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Sucursales</h4>
+                <ul>
+                    <li><a href="https://share.google/xhs0fGlsFOsEAFMGS" target="_blank">Puebla</a></li>
+                    <li><a href="https://share.google/IZb2u4sQF7hioZkr6" target="_blank">Xalapa</a></li>
+                    <li><a href="https://share.google/nO34mhj0TP0703lCx" target="_blank">Querétaro</a></li>
+                    <li><a href="https://share.google/VLfaHf6RKEW2fqOil" target="_blank">CDMX</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><a href="https://wa.me/522224021886?text=Hola,%20vi%20su%20información%20en%20su%20pagina%20web%20y%20me%20gustaría%20resolver%20algunas%20dudas"
+                        target="_blank"><i class="fas fa-phone"></i> <strong>Ventas:</strong> 222 402 1886</a></p>
+                <p><a href="https://wa.me/522203215455?text=Hola,%20me%20gustaría%20poder%20hacer%20una%20alianza%20con%20ustedes%20para%20crecer%20juntos"
+                        target="_blank"><i class="fas fa-phone-alt"></i> <strong>RP:</strong> 220 321 5455</a></p>
+                <p><a href="mailto:nannysypeques@gmail.com"><i class="fas fa-envelope"></i> nannysypeques@gmail.com</a>
+                </p>
+                <p><a href="http://reclutamiento.nannysypeques.com.mx" target="_blank"><i class="fas fa-briefcase"></i>
+                        reclutamiento.nannysypeques.com.mx</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container center" style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <p>&copy; 2026 Nannys y Peques. Todos los derechos reservados.</p>
+                <a href="#" class="aviso-privacidad-link" style="color: var(--color-text-light); font-size: 0.9rem; text-decoration: underline;">Aviso de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

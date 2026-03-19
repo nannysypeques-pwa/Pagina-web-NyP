@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nannys y Peques - ¿Cómo Funciona?</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Estilos específicos para la Landing Interactiva del Proceso */
+        .process-interactive {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-card {
+            background: var(--color-white);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            border-left: 10px solid var(--color-pink);
+            transition: var(--transition);
+        }
+
+        .process-card:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .process-card.step-1 {
+            border-color: var(--color-pink);
+        }
+
+        .process-card.step-2 {
+            border-color: var(--color-cyan);
+        }
+
+        .process-card.step-3 {
+            border-color: var(--color-yellow);
+        }
+
+        .process-card.step-4 {
+            border-color: var(--color-pink-light);
+        }
+
+        .process-card.step-5 {
+            border-color: var(--color-cyan-alt);
+        }
+
+        .process-number {
+            font-size: 5rem;
+            font-weight: 800;
+            color: rgba(0, 0, 0, 0.03);
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            line-height: 1;
+        }
+
+        .process-icon {
+            font-size: 3rem;
+            color: var(--color-text-dark);
+            background: #FAF8F5;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .step-1 .process-icon {
+            color: var(--color-pink);
+            background: var(--color-pink-soft);
+        }
+
+        .step-2 .process-icon {
+            color: var(--color-cyan);
+            background: var(--color-cyan-light);
+        }
+
+        .step-3 .process-icon {
+            color: #D97706;
+            background: var(--color-yellow-light);
+        }
+
+        .step-4 .process-icon {
+            color: var(--color-pink-light);
+            background: #FFF2F6;
+        }
+
+        .step-5 .process-icon {
+            color: var(--color-cyan-alt);
+            background: #E6F9FF;
+        }
+
+        .process-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-text p {
+            color: var(--color-text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Red de Apoyo / Garantía */
+        .guarantee-box {
+            background-color: var(--color-pink-soft);
+            border: 2px dashed var(--color-pink);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            .process-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/Logo horizontal.png" alt="Nannys y Peques Logo" class="nav-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Diferenciadores</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="proceso.html" style="color: var(--color-pink); font-weight: 700;">Cómo Contratar</a>
+                <a href="contacto.html" class="btn-primary">Contacto</a>
+            </nav>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Intro -->
+    <section class="hero hero-internal" style="background-color: #FAF8F5;">
+        <div class="container center">
+            <span class="badge" style="background: var(--color-white);">Simple, Seguro y Transparente</span>
+            <h1 class="section-title">Tu camino hacia la <br><span class="highlight-pink">tranquilidad absoluta</span>
+            </h1>
+            <p style="font-size: 1.25rem; color: var(--color-text-light); max-width: 700px; margin: 0 auto;">No dejamos
+                nada al azar. Nuestro proceso de asignación garantiza la <strong>compatibilidad perfecta</strong> entre
+                tu familia y nuestra red de Nannys.</p>
+        </div>
+    </section>
+
+    <!-- Proceso Interactivo Vertical -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="process-interactive">
+
+                <!-- Paso 1 -->
+                <div class="process-card step-1">
+                    <div class="process-number">01</div>
+                    <div class="process-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="process-text">
+                        <h3>Asesoría y Cotización Inicial</h3>
+                        <p>Nos mandas un mensaje platicándonos cuántos años tiene tu peque y qué tipo de apoyo necesitas
+                            (rutinas, estimulación, acompañamiento escolar o emergencias). En menos de 10 minutos te
+                            asesoramos sobre el mejor servicio para ti y te brindamos una cotización clara y
+                            transparente.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="process-card step-2">
+                    <div class="process-number">02</div>
+                    <div class="process-icon"><i class="fas fa-id-card"></i></div>
+                    <div class="process-text">
+                        <h3>Match perfecto Familia-Nanny</h3>
+                        <p>Conociendote mejor a ti y a tu peque, seleccionamos a la nanny ideal de nuestra red
+                            <strong>(solo 10 de cada 100 solicitudes de empleo son aceptadas)</strong> Buscamos a la
+                            que mejor se adapte a tu
+                            ubicación, horarios y necesidades. Te enviamos su
+                            perfil con fotografía para tu total seguridad.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="process-card step-3">
+                    <div class="process-number">03</div>
+                    <div class="process-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="process-text">
+                        <h3>Entrevista para servicios fijos</h3>
+                        <p>Si buscas a alguien permanente, programamos una entrevista vía Google Meet o presencial.
+                            Tendrás la
+                            oportunidad de conocerla y conectar con tu nanny antes de iniciar para asegurar una
+                            comunicación
+                            natural y resolver todas tus dudas sobre ella y la agencia.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="process-card step-4">
+                    <div class="process-number">04</div>
+                    <div class="process-icon"><i class="fas fa-door-open"></i></div>
+                    <div class="process-text">
+                        <h3>¡Llega tu Nanny!</h3>
+                        <p>La nanny se presentará en tu domicilio puntualmente, uniformada e
+                            identificada. Para servicios fijos, de acuerdo a la demanada, durante los primeros días tu
+                            nanny es acompañada por nuestra <strong>Nanny Guía</strong>, experta
+                            en "romper el hielo" y ayudar a tu nanny a crear la rutina ideal para tu peque con la
+                            intención de cumplir
+                            todas tus expectativas y hacer una mejor adaptación para todos.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="process-card step-5">
+                    <div class="process-number">05</div>
+                    <div class="process-icon"><i class="fas fa-mobile-screen-button"></i></div>
+                    <div class="process-text">
+                        <h3>Tu tranquilidad en la palma de tu mano</h3>
+                        <p>A través de nuestra App exclusiva, podrás ver tus servicios programados, los
+                            horarios, tus saldos a pagar, planeaciones de actividades, bitácoras de actividades e
+                            higiene y muchas más cosas que vamos actualizando constantemente.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Garantía y Seguridad Emocional -->
+            <div class="guarantee-box">
+                <i class="fas fa-shield-heart"
+                    style="font-size: 4rem; color: var(--color-pink); margin-bottom: 1.5rem;"></i>
+                <h2 class="section-title">Garantía de <span class="highlight-pink">Compatibilidad al 100%</span></h2>
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; color: var(--color-text-dark);">
+                    <strong>¿Qué pasa si mi hijo/a no se adapta o simplemente no hay "química"?</strong><br><br>
+                    Es algo que podría pasar y estamos preparados. Priorizamos la seguridad emocional por encima de
+                    todo. Si a pesar del apoyo de nuestra Nanny Guía y del periodo de prueba sientes que no hay
+                    conexión, tenemos una serie de alternativas para ti.
+                    Incluido el cambio de nanny en caso de ser necesario <strong>sin ningún costo
+                        adicional</strong>.<br><br>Tu
+                    tranquilidad emocional nunca es negociable.
+                </p>
+                <a href="https://wa.me/522224021886?text=Hola,%20me%20gustó%20mucho%20el%20proceso.%20Quiero%20comenzar%20y%20conocer%20a%20mi%20nanny%20ideal,%20por%20favor."
+                    class="btn-primary btn-large" target="_blank">Inicia el proceso ahora mismo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer replicado -->
+    <footer class="footer">
+        <div class="container grid-footer">
+            <div class="footer-brand">
+                <p>En Nannys y Peques cuidamos lo que más amas.</p>
+                <p>Tu tranquilidad y la de tu familia es nuestra prioridad.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/message/FT6F6WXPLP3YI1" target="_blank" class="whatsapp"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/nannysypeques" target="_blank" class="facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/nannysypeques/" target="_blank" class="instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@nannys_y_peques" target="_blank" class="tiktok"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Sucursales</h4>
+                <ul>
+                    <li><a href="https://share.google/xhs0fGlsFOsEAFMGS" target="_blank">Puebla</a></li>
+                    <li><a href="https://share.google/IZb2u4sQF7hioZkr6" target="_blank">Xalapa</a></li>
+                    <li><a href="https://share.google/nO34mhj0TP0703lCx" target="_blank">Querétaro</a></li>
+                    <li><a href="https://share.google/VLfaHf6RKEW2fqOil" target="_blank">CDMX</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><a href="https://wa.me/522224021886?text=Hola,%20vi%20su%20información%20en%20su%20pagina%20web%20y%20me%20gustaría%20resolver%20algunas%20dudas"
+                        target="_blank"><i class="fas fa-phone"></i> <strong>Ventas:</strong> 222 402 1886</a></p>
+                <p><a href="https://wa.me/522203215455?text=Hola,%20me%20gustaría%20poder%20hacer%20una%20alianza%20con%20ustedes%20para%20crecer%20juntos"
+                        target="_blank"><i class="fas fa-phone-alt"></i> <strong>RP:</strong> 220 321 5455</a></p>
+                <p><a href="mailto:nannysypeques@gmail.com"><i class="fas fa-envelope"></i> nannysypeques@gmail.com</a>
+                </p>
+                <p><a href="http://reclutamiento.nannysypeques.com.mx" target="_blank"><i class="fas fa-briefcase"></i>
+                        reclutamiento.nannysypeques.com.mx</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container center" style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <p>&copy; 2026 Nannys y Peques. Todos los derechos reservados.</p>
+                <a href="#" class="aviso-privacidad-link" style="color: var(--color-text-light); font-size: 0.9rem; text-decoration: underline;">Aviso de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
