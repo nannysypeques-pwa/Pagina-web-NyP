@@ -297,6 +297,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const telefono = '522224021886';
             const whatsappUrl = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
+            // Meta Pixel Lead tracking
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead', {
+                    content_name: 'Contact Form Submission',
+                    content_category: 'Lead'
+                });
+            }
+
             window.open(whatsappUrl, '_blank');
         });
     }
@@ -313,4 +321,23 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
     `;
     document.body.insertAdjacentHTML('beforeend', floatBtnHTML);
+
+    // --- Meta Pixel Event Tracking (WhatsApp) ---
+    const trackWhatsAppClick = () => {
+        if (typeof fbq === 'function') {
+            fbq('track', 'Contact', {
+                content_name: 'WhatsApp Click',
+                content_category: 'Lead'
+            });
+        }
+    };
+
+    // Delegate click tracking for all WhatsApp links (including future ones)
+    document.addEventListener('click', (e) => {
+        const anchor = e.target.closest('a');
+        if (anchor && anchor.href && anchor.href.includes('wa.me')) {
+            trackWhatsAppClick();
+        }
+    });
+
 });
