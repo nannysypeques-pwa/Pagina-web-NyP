@@ -100,13 +100,39 @@
         @media (max-width: 900px) {
             .contact-container {
                 grid-template-columns: 1fr;
-                padding: 1.5rem;
-                margin: -2rem 0 3rem;
+                gap: 2rem;
+                padding: 2rem;
+                margin: 0 auto 3rem;
                 width: 100%;
                 border-radius: 0;
+                box-shadow: none;
             }
+
+            .contact-info-block {
+                padding: 2rem;
+            }
+
+            .contact-form h2 {
+                font-size: 1.8rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+
             .contact-info-block {
                 padding: 1.5rem;
+            }
+
+            .info-item a {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem !important;
             }
         }
     </style>
