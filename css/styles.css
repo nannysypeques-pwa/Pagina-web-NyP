@@ -46,6 +46,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -229,6 +230,13 @@ a {
     width: auto;
     display: block;
     transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-logo {
+        height: 100px;
+        top: 50%;
+    }
 }
 
 .footer-logo {
@@ -885,6 +893,17 @@ a {
     transition: box-shadow 0.3s ease;
 }
 
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 280px;
+        padding: 1.2rem;
+    }
+    
+    .testimonials-track {
+        animation-duration: 30s; /* Más rápido en móvil */
+    }
+}
+
 .testimonial-card:hover {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
 }
@@ -1077,6 +1096,33 @@ a {
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 1000;
+        gap: 1.5rem;
+        text-align: center;
+        border-top: 1px solid #f1f5f9;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: fadeInDown 0.3s ease;
+    }
+
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .timeline::before {
