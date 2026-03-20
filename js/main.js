@@ -305,6 +305,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
+            // Google Analytics Contact tracking
+            if (typeof gtag === 'function') {
+                gtag('event', 'contact', {
+                    'event_category': 'Engagement',
+                    'event_label': 'Contact Form'
+                });
+            }
+
             window.open(whatsappUrl, '_blank');
         });
     }
@@ -322,12 +330,20 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.body.insertAdjacentHTML('beforeend', floatBtnHTML);
 
-    // --- Meta Pixel Event Tracking (WhatsApp) ---
+    // --- GA4 and Meta Pixel Event Tracking (WhatsApp) ---
     const trackWhatsAppClick = () => {
+        // Meta Pixel
         if (typeof fbq === 'function') {
             fbq('track', 'Contact', {
                 content_name: 'WhatsApp Click',
                 content_category: 'Lead'
+            });
+        }
+        // Google Analytics
+        if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+                'event_category': 'Engagement',
+                'event_label': 'WhatsApp button'
             });
         }
     };
