@@ -599,7 +599,7 @@ a {
 /* Darker yellow for text contrast */
 
 .theme-pink-light::before {
-    background: var(--color-pink-light);
+    background: var(--color-pink);
 }
 
 .theme-pink-light .service-icon {
