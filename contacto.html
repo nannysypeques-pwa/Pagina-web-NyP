@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nannys y Peques - Contacto y Cotizaciones</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.3">
+    <link rel="stylesheet" href="css/styles.css?v=1.4">
     <link rel="icon" type="image/png" href="img/logo-sin-fondo.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,6 +23,8 @@
             padding: 4rem;
             border-radius: 20px;
             box-shadow: var(--shadow-lg);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .contact-info-block {
@@ -98,7 +100,13 @@
         @media (max-width: 900px) {
             .contact-container {
                 grid-template-columns: 1fr;
-                padding: 2rem;
+                padding: 1.5rem;
+                margin: -2rem 0 3rem;
+                width: 100%;
+                border-radius: 0;
+            }
+            .contact-info-block {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -115,6 +123,7 @@
                 <a href="index.html">Inicio</a>
                 <a href="nosotros.html">Diferenciadores</a>
                 <a href="servicios.html">Servicios</a>
+                <a href="index.html#testimonios">Opiniones</a>
                 <a href="proceso.html">Cómo Contratar</a>
                 <a href="senanny.html" style="color: var(--color-pink); font-weight: bold;"><i class="fas fa-heart"></i>
                     Sé Nanny</a>

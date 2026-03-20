@@ -55,6 +55,8 @@ body {
     line-height: 1.6;
     background-color: var(--color-white);
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 h1,
@@ -409,6 +411,12 @@ a {
     right: 20%;
 }
 
+@media (max-width: 768px) {
+    .hero-blob {
+        display: none !important;
+    }
+}
+
 /* --- Nosotros --- */
 .grid-2-cols {
     display: grid;
@@ -484,6 +492,13 @@ a {
     border-radius: 50%;
     filter: blur(60px);
     opacity: 0.35;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .decoration {
+        display: none !important;
+    }
 }
 
 .circle-pink {
@@ -545,7 +560,7 @@ a {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -847,6 +862,7 @@ a {
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
+    overflow: hidden; /* CRITICAL: Prevent horizontal scroll from tracks */
 }
 
 /* Each track will have an animation that moves left and repeats */
@@ -858,6 +874,7 @@ a {
     width: max-content;
     /* Adjust duration for speed */
     animation: scroll-infinite 45s linear infinite;
+    justify-content: flex-start;
 }
 
 /* Hover pauses the animation */
@@ -1454,6 +1471,7 @@ a {
         min-height: auto;
         margin-top: 2rem;
         padding-bottom: 2rem;
+        overflow: hidden; /* Contain shifted items */
     }
 
     .philosophy-center {
