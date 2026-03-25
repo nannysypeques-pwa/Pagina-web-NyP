@@ -276,6 +276,10 @@ a {
     color: var(--color-pink);
 }
 
+.nav-hidden {
+    display: none !important;
+}
+
 .nav-links .btn-primary:hover {
     color: white !important;
 }
@@ -427,6 +431,36 @@ a {
     font-size: 0.9rem;
     color: var(--color-text-light);
 }
+
+/* --- Interactive Static Map (Puebla) --- */
+.interactive-map-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.image-mask-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.interactive-map-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.8s ease;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
+}
+
+.interactive-map-wrapper:hover .interactive-map-img {
+    transform: scale(1.05) translateY(-10px) rotate(0.5deg); 
+    filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.15));
+}
+
 
 @media (max-width: 768px) {
     .map-3d-wrapper {

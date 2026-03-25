@@ -14,6 +14,38 @@
     <meta property="og:url" content="https://nannysypeques.com/queretaro.html">
     <link rel="canonical" href="https://nannysypeques.com/queretaro.html">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Nannys y Peques Querétaro",
+      "image": "https://nannysypeques.com/img/Logo%20horizontal.png",
+      "@id": "https://nannysypeques.com/queretaro.html",
+      "url": "https://nannysypeques.com/queretaro.html",
+      "telephone": "+522224021886",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Juriquilla, El Campanario, Zibatá, Jurica",
+        "addressLocality": "Querétaro",
+        "addressRegion": "QRO",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 20.5888,
+        "longitude": -100.3899
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="css/styles.css?v=1.4">
     <link rel="icon" type="image/png" href="img/logo-sin-fondo.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,6 +59,31 @@
         gtag('js', new Date());
         gtag('config', 'G-2KEH9E3JVJ');
     </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '721098212188258');
+        fbq('init', '957014987027109');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=721098212188258&ev=PageView&noscript=1" />
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=957014987027109&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -49,7 +106,7 @@
                     </div>
                 </div>
                 <a href="proceso.html">Cómo Contratar</a>
-                <a href="blog.html">Blog</a>
+                <a href="blog.html" class="nav-hidden">Blog</a>
                 <a href="senanny.html" style="color: var(--color-pink); font-weight: bold;"><i class="fas fa-heart"></i>
                     Sé Nanny</a>
                 <a href="contacto.html" class="btn-primary">Contacto</a>
@@ -66,7 +123,10 @@
                 Acompañamos a las familias en las zonas de mayor crecimiento: <strong>Juriquilla, El Campanario, Jurica, Zibatá, Milenio III y Centro.</strong> Cuidado profesional con ADN poblano.
             </p>
             <div class="hero-buttons">
-                <a href="https://wa.me/522224021886?text=Hola,%20busco%20una%20niñera%20en%20Querétaro" class="btn-primary" style="background: #D97706; border-color: #D97706;" target="_blank">WhatsApp Querétaro</a>
+                <a href="https://wa.me/522224021886?text=Hola,%20busco%20una%20niñera%20en%20Querétaro"
+                    class="btn-primary" style="background: #D97706; border-color: #D97706;" target="_blank"
+                    onclick="fbq('track', 'Contact'); gtag('event', 'click_cotizar', { 'event_category': 'Cotización', 'event_label': 'Querétaro' });">WhatsApp
+                    Querétaro</a>
                 <a href="proceso.html" class="btn-secondary">¿Cómo funciona?</a>
             </div>
         </div>
@@ -91,39 +151,176 @@
         </div>
     </section>
 
-    <section class="section" style="background: white;">
+    <!-- Mapa Interactivo de Querétaro (Imagen con Animación CSS) -->
+    <section class="section" style="padding-top: 5rem; padding-bottom: 2rem; overflow: visible;">
         <div class="container center">
-            <h2 class="section-title">Voces de <span>Querétaro</span></h2>
-            <div class="grid-2-cols" style="margin-top: 3rem; gap: 4rem;">
-                <div class="card p-3" style="text-align: left; border-left: 8px solid #D97706;">
-                    <p>"Buscamos mucho tiempo en Juriquilla y ninguna agencia nos dio la confianza que Nannys y Peques proyecta. Muy profesionales."</p>
-                    <h4 style="margin-top: 1rem; color: #D97706;">- Familia Arriaga, Juriquilla</h4>
-                </div>
-                <div class="card p-3" style="text-align: left; border-left: 8px solid #D97706;">
-                    <p>"El servicio de Neuronanny cambió la rutina de mis peques. Están más felices y aprendiendo mucho más."</p>
-                    <h4 style="margin-top: 1rem; color: #D97706;">- Familia Gonzalez, El Campanario</h4>
+            <h2 class="section-title">Nuestra Cobertura en <span>Querétaro</span></h2>
+            <p style="margin-bottom: 3rem;">Llegamos a cada rincón de la ciudad para cuidar lo que más amas.</p>
+
+            <div class="interactive-map-wrapper" style="max-width: 750px;">
+                <div class="image-mask-container">
+                    <img src="img/maps/Qro.png" id="queretaro-map" class="interactive-map-img" alt="Mapa interactivo de cobertura de niñeras en Querétaro">
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container grid-footer">
-            <div class="footer-brand">
-                <p>Nannys y Peques: El aliado de las familias en Querétaro.</p>
-                <div class="social-links">
-                    <a href="https://wa.me/message/FT6F6WXPLP3YI1" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.facebook.com/nannysypeques" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <section class="section"
+        style="background-color: var(--color-pink-soft); position: relative; overflow: hidden; padding: 6rem 0;">
+        <!-- Elementos decorativos de fondo -->
+        <div class="hero-blob hero-blob-2"
+            style="position: absolute; top: -50px; left: -50px; opacity: 0.5; background: var(--color-yellow-light); border-radius: 50%;">
+        </div>
+        <div class="hero-blob hero-blob-1" style="position: absolute; bottom: -50px; right: -50px; opacity: 0.5;"></div>
+
+        <div class="container" style="position: relative; z-index: 2; width: 100%; max-width: 1200px;">
+            <div class="grid-2-cols align-center" style="gap: 2.5rem;">
+                <!-- Bloque Visual Decorado -->
+                <div class="recruitment-visual" style="text-align: center; position: relative; max-width: 100%;">
+                    <div
+                        style="background: white; padding: 3rem 1.5rem; border-radius: 40px; box-shadow: var(--shadow-lg); position: relative; display: inline-block; max-width: 100%; box-sizing: border-box;">
+                        <span style="display:inline-block; margin-bottom: 2rem;">
+                            <i class="fas fa-heart"
+                                style="font-size: 8rem; color: var(--color-cyan); filter: drop-shadow(0 15px 20px rgba(5,174,230,0.3));"></i>
+                            <i class="fas fa-child"
+                                style="font-size: 4rem; color: var(--color-white); position: absolute; transform: translate(-100%, 75%); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));"></i>
+                        </span>
+
+                        <h3
+                            style="color: var(--color-text-dark); font-size: 2rem; margin-bottom: 1rem; line-height: 1.2;">
+                            Únete a nuestra<br><span class="highlight-pink">Gran Familia</span></h3>
+                        <p style="color: var(--color-text-light); font-size: 1.1rem; max-width: 300px; margin: 0 auto;">
+                            Miles de sonrisas multiplicadas todos los días por nuestras increíbles nannies.</p>
+
+                        <!-- Elemento flotante decorativo -->
+                        <div
+                            style="position: absolute; top: 10px; right: -20px; background: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); border: 4px solid var(--color-pink-soft);">
+                            <i class="fas fa-star" style="color: #D97706; font-size: 2rem;"></i>
+                        </div>
+                        <div
+                            style="position: absolute; bottom: 30px; left: -20px; background: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); border: 2px solid var(--color-cyan-light);">
+                            <i class="fas fa-certificate" style="color: var(--color-pink); font-size: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque de Texto Orientado al Reclutamiento -->
+                <div class="recruitment-text"
+                    style="background: white; padding: 2.5rem 2rem; border-radius: 30px; box-shadow: var(--shadow-md); max-width: 100%; box-sizing: border-box; margin: 0 auto;">
+                    <span class="badge"
+                        style="background: var(--color-pink-soft); color: var(--color-pink-strong); box-shadow: var(--shadow-sm); font-size: 0.95rem; padding: 0.5rem 1rem;">Bolsa de Trabajo para Niñeras en Querétaro</span>
+                    <h1 class="section-title" style="margin-top: 1rem; margin-bottom: 1.2rem; font-size: 2.2rem;">Tu
+                        vocación, tu gran
+                        <br>carrera en <span>Querétaro</span>
+                    </h1>
+                    <p
+                        style="font-size: 1.1rem; color: var(--color-text-dark); margin-bottom: 1.8rem; line-height: 1.6;">
+                        ¿Buscas empleo como niñera o cuidadora en Querétaro? Únete a la agencia líder. Tenemos vacantes
+                        en <strong>Juriquilla, El Campanario, Zibatá, Jurica</strong> y más.
+                    </p>
+                    <div style="margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <span
+                                style="background: var(--color-cyan-light); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); flex-shrink: 0;"><i
+                                    class="fas fa-home highlight-pink" style="font-size: 1.2rem;"></i></span>
+                            <div>
+                                <h4 style="color: var(--color-text-dark); margin-bottom: 0.2rem;">Cerca de casa</h4>
+                                <p style="color: var(--color-text-light); font-size: 0.9rem; line-height: 1.4;">Te
+                                    asignamos servicios en zonas como Juriquilla, Corregidora o Milenio III.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <span
+                                style="background: var(--color-yellow-light); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); flex-shrink: 0;"><i
+                                    class="fas fa-graduation-cap highlight-pink" style="font-size: 1.2rem;"></i></span>
+                            <div>
+                                <h4 style="color: var(--color-text-dark); margin-bottom: 0.2rem;">Capacitación Constante
+                                </h4>
+                                <p style="color: var(--color-text-light); font-size: 0.9rem; line-height: 1.4;">
+                                    Mejora tus habilidades con nuestro programa Neuronanny.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <span
+                                style="background: var(--color-pink-light); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); flex-shrink: 0;"><i
+                                    class="fas fa-shield-heart highlight-pink" style="font-size: 1.2rem;"></i></span>
+                            <div>
+                                <h4 style="color: var(--color-text-dark); margin-bottom: 0.2rem;">Seguridad y Respaldo
+                                </h4>
+                                <p style="color: var(--color-text-light); font-size: 0.9rem; line-height: 1.4;">
+                                    Pagos puntuales y el respaldo de la mejor agencia del país.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="senanny.html"
+                        class="btn-primary btn-large"
+                        onclick="fbq('track', 'CompleteRegistration'); gtag('event', 'click_reclutamiento', { 'event_category': 'Reclutamiento', 'event_label': 'Querétaro' });"
+                        style="display: inline-flex; align-items: center; gap: 0.8rem; font-size: 1.1rem; width: 100%; justify-content: center; box-shadow: 0 5px 15px rgba(236, 128, 198, 0.4); padding: 0.8rem 1.5rem;">
+                        ¡Postúlate ahora! <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding: 8rem 0;">
+        <div class="container center">
+            <h2 class="section-title">¡Trabajemos juntos hoy mismo <br>en <span>Querétaro!</span></h2>
+            <p style="margin-bottom: 3rem;">Estamos listos para transformar la vida de nuestros peques con amor y
+                profesionalismo.</p>
+            <a href="https://wa.me/522224021886?text=Hola,%20me%20gustaría%20contratar%20un%20servicio%20para%20la%20ciudad%20de%20Querétaro,%20por%20favor"
+                class="btn-primary btn-large" target="_blank"
+                onclick="fbq('track', 'Lead'); gtag('event', 'click_whatsapp', { 'event_category': 'WhatsApp', 'event_label': 'Querétaro' });">WhatsApp
+                Querétaro: 222 402 1886</a>
+        </div>
+    </section>
+
+    <footer id="contacto" class="footer">
+        <div class="container grid-footer">
+            <div class="footer-brand">
+                <p>En Nannys y Peques cuidamos lo que más amas.</p>
+                <p>Tu tranquilidad y la de tu familia es nuestra prioridad.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/message/FT6F6WXPLP3YI1" target="_blank" class="whatsapp"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/nannysypeques" target="_blank" class="facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/nannysypeques/" target="_blank" class="instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@nannys_y_peques" target="_blank" class="tiktok"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
             <div class="footer-links">
-                <h4>Sedes</h4>
+                <h4>Sucursales</h4>
                 <ul>
-                    <li><a href="queretaro.html">Querétaro</a></li>
-                    <li><a href="puebla.html">Puebla</a></li>
-                    <li><a href="cdmx.html">CDMX</a></li>
-                    <li><a href="xalapa.html">Xalapa</a></li>
+                    <li><a href="https://share.google/xhs0fGlsFOsEAFMGS" target="_blank">Puebla</a></li>
+                    <li><a href="https://share.google/IZb2u4sQF7hioZkr6" target="_blank">Xalapa</a></li>
+                    <li><a href="https://share.google/nO34mhj0TP0703lCx" target="_blank">Querétaro</a></li>
+                    <li><a href="https://share.google/VLfaHf6RKEW2fqOil" target="_blank">CDMX</a></li>
                 </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><a href="https://wa.me/522224021886?text=Hola,%20vi%20su%20información%20en%20su%20pagina%20web%20y%20me%20gustaría%20resolver%20algunas%20dudas"
+                        target="_blank"><i class="fas fa-phone"></i> <strong>Ventas:</strong> 222 402 1886</a></p>
+                <p><a href="https://wa.me/522203215455?text=Hola,%20me%20gustaría%20poder%20hacer%20una%20alianza%20con%20ustedes%20para%20crecer%20juntos"
+                        target="_blank"><i class="fas fa-phone-alt"></i> <strong>RP:</strong> 220 321 5455</a></p>
+                <p><a href="mailto:nannysypeques@gmail.com"><i class="fas fa-envelope"></i> nannysypeques@gmail.com</a>
+                </p>
+                <p><a href="http://reclutamiento.nannysypeques.com.mx" target="_blank"><i class="fas fa-briefcase"></i>
+                        reclutamiento.nannysypeques.com.mx</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container center"
+                style="display: flex; justify-content: center; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <p>&copy; 2026 Nannys y Peques. Todos los derechos reservados.</p>
+                <a href="#" class="aviso-privacidad-link"
+                    style="color: var(--color-text-light); font-size: 0.9rem; text-decoration: underline;">Aviso de
+                    Privacidad</a>
             </div>
         </div>
     </footer>

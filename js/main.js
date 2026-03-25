@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     navAnchors.forEach(a => {
         const hrefPath = a.getAttribute('href')?.split('/').pop() || '';
 
-        // Remove style to clear hardcoded ones
-        if (!a.classList.contains('btn-primary')) {
+        // Remove style to clear hardcoded ones, but keep hidden ones
+        if (!a.classList.contains('btn-primary') && !a.classList.contains('nav-hidden')) {
             a.removeAttribute('style');
         }
 

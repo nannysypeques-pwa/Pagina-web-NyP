@@ -1,6 +1,6 @@
 /**
- * Nannys y Peques - Refined 3D Map Engine
- * Geographic 3D polygons for coverage zones.
+ * Nannys y Peques - Professional Interactive 3D Map
+ * CALIBRATED alignment to img/maps/Puebla.png
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,103 +9,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Configuration ---
     const colors = {
-        background: 0xffffff,
-        grid: 0xeeeeee,
-        base: 0xf1f5f9,
-        zones: [
-            0xEC80C6, // Pink (Lomas / Santa Clara)
-            0x4DC9E1, // Cyan (San Bernardino)
-            0xFBBF24, // Yellow (Cholula)
-            0x10B981  // Green (Cuautlancingo)
-        ],
-        hover: 0xFFFFFF
+        zones: {
+            cuautlancingo: 0x14A492, // Green/Teal
+            cholula: 0xEDB112,       // Yellow
+            sanBernardino: 0x1E40AF, // Blue
+            santaClara: 0xEF4444      // Red/Pink
+        }
     };
 
-    // --- Shape Definitions (Approximated from Image 2) ---
-    // Coordinates are relative to a central point in Puebla
+    // --- Calibrated Shapes (Targeting Puebla.png outlines) ---
     
-    // 1. Cuautlancingo (Greeen/Norte)
-    const shapeCuautlancingo = new THREE.Shape();
-    shapeCuautlancingo.moveTo(-1, 2);
-    shapeCuautlancingo.lineTo(2, 2.5);
-    shapeCuautlancingo.lineTo(3.5, 1.5);
-    shapeCuautlancingo.lineTo(3, 0.5);
-    shapeCuautlancingo.lineTo(1, 0.2);
-    shapeCuautlancingo.lineTo(-1.5, 0.5);
-    shapeCuautlancingo.lineTo(-1, 2);
+    // 1. Zona Superior (Teal) - Wide and top
+    const shapeTop = new THREE.Shape();
+    shapeTop.moveTo(-2.5, 4.5);
+    shapeTop.lineTo(6.5, 4.5);
+    shapeTop.lineTo(6.8, 0.5);
+    shapeTop.lineTo(1.8, -0.2);
+    shapeTop.lineTo(-0.5, 0.5);
+    shapeTop.lineTo(-1.8, 1.8);
+    shapeTop.lineTo(-2.5, 4.5);
 
-    // 2. San Pedro Cholula (Yellow/West)
-    const shapeCholula = new THREE.Shape();
-    shapeCholula.moveTo(-3, 1.5);
-    shapeCholula.lineTo(-1.2, 1.8);
-    shapeCholula.lineTo(-1, 0.5);
-    shapeCholula.lineTo(-2, -0.2);
-    shapeCholula.lineTo(-3.5, 0.5);
-    shapeCholula.lineTo(-3, 1.5);
+    // 2. Zona Izquierda (Amarillo) - Top Left
+    const shapeLeft = new THREE.Shape();
+    shapeLeft.moveTo(-4.5, 4.8);
+    shapeLeft.lineTo(-2.5, 4.5);
+    shapeLeft.lineTo(-1.8, 1.8);
+    shapeLeft.lineTo(-4.2, 1.5);
+    shapeLeft.lineTo(-4.5, 4.8);
 
-    // 3. San Bernardino Tlaxcalancingo (Cyan/SouthWest)
-    const shapeSanBernardino = new THREE.Shape();
-    shapeSanBernardino.moveTo(-2, -0.2);
-    shapeSanBernardino.lineTo(-0.5, 0);
-    shapeSanBernardino.lineTo(0.2, -1.2);
-    shapeSanBernardino.lineTo(-1.5, -1.8);
-    shapeSanBernardino.lineTo(-2.5, -1);
-    shapeSanBernardino.lineTo(-2, -0.2);
+    // 3. Zona Inferior Izquierda (Azul) - Large Bottom Left
+    const shapeBottomLeft = new THREE.Shape();
+    shapeBottomLeft.moveTo(-4.2, 1.5);
+    shapeBottomLeft.lineTo(-0.8, 0.2);
+    shapeBottomLeft.lineTo(-0.5, -2.5);
+    shapeBottomLeft.lineTo(-2.8, -6.5);
+    shapeBottomLeft.lineTo(-5.5, -2.5);
+    shapeBottomLeft.lineTo(-4.2, 1.5);
 
-    // 4. Santa Clara Ocoyucan / Lomas (Pink/South)
-    const shapeSantaClara = new THREE.Shape();
-    shapeSantaClara.moveTo(0.2, -1.2);
-    shapeSantaClara.lineTo(1.5, -0.8);
-    shapeSantaClara.lineTo(2.5, -1.5);
-    shapeSantaClara.lineTo(2, -2.5);
-    shapeSantaClara.lineTo(0, -2.8);
-    shapeSantaClara.lineTo(-0.5, -2);
-    shapeSantaClara.lineTo(0.2, -1.2);
+    // 4. Zona Inferior Derecha (Roja) - Center Bottom
+    const shapeBottomRight = new THREE.Shape();
+    shapeBottomRight.moveTo(-0.5, -2.5);
+    shapeBottomRight.lineTo(3.8, -1.2);
+    shapeBottomRight.lineTo(5.2, -4.5);
+    shapeBottomRight.lineTo(2.0, -6.8);
+    shapeBottomRight.lineTo(-1.8, -6.2);
+    shapeBottomRight.lineTo(-0.5, -2.5);
 
-    const extrudeSettings = { 
-        depth: 0.4, 
-        bevelEnabled: true, 
-        bevelThickness: 0.1, 
-        bevelSize: 0.1, 
-        bevelOffset: 0, 
-        bevelSegments: 3 
-    };
+    const extrudeSettings = { depth: 0.3, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.05 };
 
     const zonesData = [
-        { 
-            name: "Lomas de Angelópolis", 
-            desc: "Santa Clara Ocoyucan y Lomas I, II, III. Zona de alta demanda.", 
-            shape: shapeSantaClara,
-            color: colors.zones[0],
-            height: 0.6
-        },
-        { 
-            name: "San Bernardino", 
-            desc: "Tlaxcalancingo y alrededores de la Vía Atlixcáyotl.", 
-            shape: shapeSanBernardino,
-            color: colors.zones[1],
-            height: 0.5
-        },
-        { 
-            name: "San Pedro Cholula", 
-            desc: "Zonas residenciales de Cholula y Zavaleta Poniente.", 
-            shape: shapeCholula,
-            color: colors.zones[2],
-            height: 0.55
-        },
-        { 
-            name: "Cuautlancingo", 
-            desc: "Cobertura completa en la zona industrial y residencial norte.", 
-            shape: shapeCuautlancingo,
-            color: colors.zones[3],
-            height: 0.45
-        }
+        { name: "Zona Norte", shape: shapeTop, color: colors.zones.cuautlancingo },
+        { name: "Zona Poniente", shape: shapeLeft, color: colors.zones.cholula },
+        { name: "Zona Sur-Poniente", shape: shapeBottomLeft, color: colors.zones.sanBernardino },
+        { name: "Zona Sur", shape: shapeBottomRight, color: colors.zones.santaClara }
     ];
 
     // --- Scene Setup ---
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.set(0, 10, 8); // Top-down perspective
+    scene.background = new THREE.Color(0xfcfcfc);
+
+    const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.set(0, 18, 0); 
     camera.lookAt(0, 0, 0);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -115,48 +79,51 @@ document.addEventListener('DOMContentLoaded', () => {
     container.appendChild(renderer.domElement);
 
     // --- Lighting ---
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.8);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(5, 15, 5);
-    directionalLight.castShadow = true;
-    scene.add(directionalLight);
+    const pointLight = new THREE.PointLight(0xffffff, 0.8);
+    pointLight.position.set(10, 20, 10);
+    pointLight.castShadow = true;
+    scene.add(pointLight);
 
-    // --- Central Map Plate (Simplified) ---
-    const basePlateGeo = new THREE.CircleGeometry(6, 64);
-    const basePlateMat = new THREE.MeshPhongMaterial({ color: 0xf8fafc, side: THREE.DoubleSide });
-    const basePlate = new THREE.Mesh(basePlateGeo, basePlateMat);
-    basePlate.rotation.x = -Math.PI / 2;
-    basePlate.position.y = -0.1;
-    basePlate.receiveShadow = true;
-    scene.add(basePlate);
+    // --- Base Map Image ---
+    const textureLoader = new THREE.TextureLoader();
+    textureLoader.load('img/maps/Puebla.png', (texture) => {
+        const aspect = texture.image.width / texture.image.height;
+        const planeGeo = new THREE.PlaneGeometry(12 * aspect, 12); // Slightly larger for better fit
+        const planeMat = new THREE.MeshBasicMaterial({ map: texture, transparent: true, side: THREE.DoubleSide });
+        const mapPlane = new THREE.Mesh(planeGeo, planeMat);
+        mapPlane.rotation.x = -Math.PI / 2;
+        mapPlane.position.y = -0.15;
+        mapPlane.receiveShadow = true;
+        scene.add(mapPlane);
 
-    // --- Zone Meshes ---
-    const zoneMeshes = [];
-    const infoCard = document.getElementById('map-3d-info');
-    const zoneNameEl = document.getElementById('zone-name');
-    const zoneDescEl = document.getElementById('zone-desc');
-
-    zonesData.forEach((data) => {
-        const geometry = new THREE.ExtrudeGeometry(data.shape, { ...extrudeSettings, depth: data.height });
-        const material = new THREE.MeshPhongMaterial({ 
-            color: data.color,
-            transparent: true,
-            opacity: 0.7,
-            shininess: 80
-        });
-        
-        const mesh = new THREE.Mesh(geometry, material);
-        mesh.rotation.x = -Math.PI / 2; // Flat on the ground
-        mesh.position.y = 0;
-        mesh.castShadow = true;
-        mesh.receiveShadow = true;
-        mesh.userData = data;
-        
-        scene.add(mesh);
-        zoneMeshes.push(mesh);
+        initZones();
     });
+
+    const zoneMeshes = [];
+
+    function initZones() {
+        zonesData.forEach((data) => {
+            const geometry = new THREE.ExtrudeGeometry(data.shape, extrudeSettings);
+            const material = new THREE.MeshPhongMaterial({ 
+                color: data.color, 
+                transparent: true, 
+                opacity: 0.5,
+                shininess: 90
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.rotation.x = -Math.PI / 2;
+            mesh.position.y = 0;
+            mesh.castShadow = true;
+            mesh.userData = data;
+            
+            scene.add(mesh);
+            zoneMeshes.push(mesh);
+        });
+        animate();
+    }
 
     // --- Interaction ---
     const mouse = new THREE.Vector2();
@@ -171,45 +138,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     container.addEventListener('mousemove', onMouseMove);
 
-    // --- Animation Loop ---
     function animate() {
         requestAnimationFrame(animate);
 
-        // Gentle floating effect for the whole group
-        const time = Date.now() * 0.001;
-        scene.position.y = Math.sin(time) * 0.05;
-
         // Perspective rotation
-        const targetRotY = mouse.x * 0.15;
-        const targetRotX = mouse.y * 0.1;
-        scene.rotation.y += (targetRotY - scene.rotation.y) * 0.05;
-        scene.rotation.x += (targetRotX - scene.rotation.x) * 0.05;
+        scene.rotation.y += (mouse.x * 0.1 - scene.rotation.y) * 0.05;
+        scene.rotation.x += (mouse.y * 0.1 - scene.rotation.x) * 0.05;
 
-        // Interaction
+        // Intersection (Elevation)
         raycaster.setFromCamera(mouse, camera);
         const intersects = raycaster.intersectObjects(zoneMeshes);
 
         if (intersects.length > 0) {
             const first = intersects[0].object;
             if (hoveredMesh !== first) {
-                if (hoveredMesh) {
-                    hoveredMesh.material.opacity = 0.7;
-                    hoveredMesh.position.y = 0;
-                }
+                if (hoveredMesh) hoveredMesh.material.opacity = 0.5;
                 hoveredMesh = first;
-                hoveredMesh.material.opacity = 1;
-                hoveredMesh.position.y = 0.2; // Lift up
-                
-                zoneNameEl.innerText = hoveredMesh.userData.name;
-                zoneDescEl.innerText = hoveredMesh.userData.desc;
-                infoCard.classList.add('active');
+                hoveredMesh.material.opacity = 0.8;
             }
+            hoveredMesh.position.y += (1.0 - hoveredMesh.position.y) * 0.1; // Higher lift for visibility
         } else {
             if (hoveredMesh) {
-                hoveredMesh.material.opacity = 0.7;
-                hoveredMesh.position.y = 0;
-                hoveredMesh = null;
-                infoCard.classList.remove('active');
+                hoveredMesh.material.opacity = 0.5;
+                hoveredMesh.position.y += (0 - hoveredMesh.position.y) * 0.1;
+                if (Math.abs(hoveredMesh.position.y) < 0.01) {
+                    hoveredMesh.position.y = 0;
+                    hoveredMesh = null;
+                }
             }
         }
 
@@ -221,6 +176,4 @@ document.addEventListener('DOMContentLoaded', () => {
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
     });
-
-    animate();
 });
