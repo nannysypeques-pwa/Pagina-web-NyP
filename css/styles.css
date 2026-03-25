@@ -474,73 +474,65 @@ a {
     }
 }
 
-/* Mobile dropdown — nueva lista inyectada por JS */
-
-/* Ocultar en desktop la lista inyectada por JS */
-.mobile-cities-list { display: none; }
+/* Helper classes for dual-structure menu */
+.mobile-only { display: none !important; }
+.desktop-only { display: block !important; }
 
 @media (max-width: 768px) {
-    /* Ocultar el dropdown original en mobile */
-    .nav-dropdown { display: none !important; }
+    .mobile-only { display: flex !important; }
+    .desktop-only { display: none !important; }
 
-    /* Lista de ciudades mobile — centrada y visible */
-    .mobile-cities-list {
+    /* Estilo de lista de ciudades fija en móvil */
+    .mobile-cities-container {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        gap: 0.3rem;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
     }
 
     .mobile-cities-label {
-        font-size: 0.75rem;
-        color: var(--color-text-light);
-        font-weight: 600;
+        font-size: 0.8rem;
+        color: var(--color-pink-strong);
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
-        margin-bottom: 0.15rem;
+        letter-spacing: 0.05em;
     }
 
-    .mobile-cities-box {
+    .mobile-cities-grid {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 0.15rem;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 250px;
+        padding: 0.8rem;
+        background: #f8fafc;
         border: 1px solid var(--color-pink-light);
-        border-radius: 14px;
-        padding: 0.5rem 0.75rem;
-        background: white;
+        border-radius: 16px;
     }
 
-    .mobile-cities-box a {
+    .mobile-cities-grid a {
         display: flex !important;
         align-items: center;
-        gap: 0.6rem;
-        padding: 0.45rem 1rem;
-        border-radius: 8px;
+        gap: 0.8rem;
+        padding: 0.6rem 1rem;
+        background: white;
+        border-radius: 10px;
         color: var(--color-text-dark) !important;
-        font-size: 0.95rem;
         font-weight: 500;
-        white-space: nowrap;
         text-decoration: none;
-        text-align: left;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
     }
 
-    .mobile-cities-box a:hover,
-    .mobile-cities-box a:active {
-        background: var(--color-pink-light);
-        color: var(--color-pink-strong) !important;
-    }
-
-    .mobile-cities-box .city-icon {
-        width: 28px;
-        height: 28px;
-        border-radius: 7px;
+    .mobile-cities-grid .city-icon {
+        width: 30px;
+        height: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.85rem;
-        flex-shrink: 0;
+        border-radius: 8px;
+        font-size: 0.9rem;
     }
 }
 

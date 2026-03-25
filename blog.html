@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -120,13 +120,41 @@
                 <a href="index.html">Inicio</a>
                 <a href="nosotros.html">Diferenciadores</a>
                 <a href="servicios.html">Servicios</a>
-                <div class="nav-dropdown">
+                                <!-- Ciudades - Versión Escritorio -->
+                <div class="nav-dropdown desktop-only">
                     <a href="#">Ciudades</a>
                     <div class="dropdown-menu">
-                        <a href="puebla.html">Puebla</a>
-                        <a href="cdmx.html">CDMX</a>
-                        <a href="queretaro.html">Querétaro</a>
-                        <a href="xalapa.html">Xalapa</a>
+                        <a href="puebla.html"><span class="city-icon"
+                                style="background: var(--color-pink-light); color: var(--color-pink-strong);"><i
+                                    class="fas fa-location-dot"></i></span> Puebla</a>
+                        <a href="cdmx.html"><span class="city-icon"
+                                style="background: var(--color-cyan-light); color: var(--color-cyan);"><i
+                                    class="fas fa-city"></i></span> CDMX</a>
+                        <a href="queretaro.html"><span class="city-icon"
+                                style="background: var(--color-yellow-light); color: #D97706;"><i
+                                    class="fas fa-monument"></i></span> Querétaro</a>
+                        <a href="xalapa.html"><span class="city-icon"
+                                style="background: var(--color-pink-light); color: var(--color-pink);"><i
+                                    class="fas fa-tree"></i></span> Xalapa</a>
+                    </div>
+                </div>
+
+                <!-- Ciudades - Versión Móvil (Siempre visible en el menú hamburguesa) -->
+                <div class="mobile-cities-container mobile-only">
+                    <span class="mobile-cities-label">Ciudades</span>
+                    <div class="mobile-cities-grid">
+                        <a href="puebla.html"><span class="city-icon"
+                                style="background: var(--color-pink-light); color: var(--color-pink-strong);"><i
+                                    class="fas fa-location-dot"></i></span> Puebla</a>
+                        <a href="cdmx.html"><span class="city-icon"
+                                style="background: var(--color-cyan-light); color: var(--color-cyan);"><i
+                                    class="fas fa-city"></i></span> CDMX</a>
+                        <a href="queretaro.html"><span class="city-icon"
+                                style="background: var(--color-yellow-light); color: #D97706;"><i
+                                    class="fas fa-monument"></i></span> Querétaro</a>
+                        <a href="xalapa.html"><span class="city-icon"
+                                style="background: var(--color-pink-light); color: var(--color-pink);"><i
+                                    class="fas fa-tree"></i></span> Xalapa</a>
                     </div>
                 </div>
                 <a href="blog.html" class="nav-hidden" style="color: var(--color-pink); font-weight: 700;">Blog</a>

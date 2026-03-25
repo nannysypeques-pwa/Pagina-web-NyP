@@ -73,7 +73,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -95,11 +95,11 @@
 
     <!-- TikTok Pixel Code Start -->
     <script>
-    !function (w, d, t) {
-        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-        ttq.load('D721RE3C77U5P0Q26RI0');
-        ttq.page();
-    }(window, document, 'ttq');
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || []; ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"], ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } }; for (var i = 0; i < ttq.methods.length; i++)ttq.setAndDefer(ttq, ttq.methods[i]); ttq.instance = function (t) { for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)ttq.setAndDefer(e, ttq.methods[n]); return e }, ttq.load = function (e, n) { var r = "https://analytics.tiktok.com/i18n/pixel/events.js", o = n && n.partner; ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {}; n = document.createElement("script"); n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t; e = document.getElementsByTagName("script")[0]; e.parentNode.insertBefore(n, e) };
+            ttq.load('D721RE3C77U5P0Q26RI0');
+            ttq.page();
+        }(window, document, 'ttq');
     </script>
     <!-- TikTok Pixel Code End -->
 </head>
@@ -116,9 +116,29 @@
                 <a href="index.html" style="color: var(--color-pink); font-weight: 700;">Inicio</a>
                 <a href="nosotros.html">Diferenciadores</a>
                 <a href="servicios.html">Servicios</a>
-                <div class="nav-dropdown">
+                <!-- Ciudades - Versión Escritorio -->
+                <div class="nav-dropdown desktop-only">
                     <a href="#">Ciudades</a>
                     <div class="dropdown-menu">
+                        <a href="puebla.html"><span class="city-icon"
+                                style="background: var(--color-pink-light); color: var(--color-pink-strong);"><i
+                                    class="fas fa-location-dot"></i></span> Puebla</a>
+                        <a href="cdmx.html"><span class="city-icon"
+                                style="background: var(--color-cyan-light); color: var(--color-cyan);"><i
+                                    class="fas fa-city"></i></span> CDMX</a>
+                        <a href="queretaro.html"><span class="city-icon"
+                                style="background: var(--color-yellow-light); color: #D97706;"><i
+                                    class="fas fa-monument"></i></span> Querétaro</a>
+                        <a href="xalapa.html"><span class="city-icon"
+                                style="background: var(--color-pink-light); color: var(--color-pink);"><i
+                                    class="fas fa-tree"></i></span> Xalapa</a>
+                    </div>
+                </div>
+
+                <!-- Ciudades - Versión Móvil (Siempre visible en el menú hamburguesa) -->
+                <div class="mobile-cities-container mobile-only">
+                    <span class="mobile-cities-label">Ciudades</span>
+                    <div class="mobile-cities-grid">
                         <a href="puebla.html"><span class="city-icon"
                                 style="background: var(--color-pink-light); color: var(--color-pink-strong);"><i
                                     class="fas fa-location-dot"></i></span> Puebla</a>
@@ -150,7 +170,7 @@
                 <span class="badge">Más de 5,000 familias confían en nosotros.</span>
                 <h1>Agencia de <span class="highlight-pink">Niñeras a Domicilio</span> y Cuidado Infantil</h1>
                 <p style="margin: 0 auto 3rem;">Servicio profesional y seguro de niñeras a domicilio en:<br>Puebla,
-                    Xalapa, Querétaro y CDMX.</p>
+                    Xalapa, Querétaro y CDMX2.</p>
                 <div class="hero-buttons">
                     <a href="https://wa.me/522224021886?text=Hola,%20vi%20su%20información%20en%20su%20pagina%20web%20y%20me%20gustaría%20resolver%20algunas%20dudas"
                         class="btn-primary btn-large" target="_blank">

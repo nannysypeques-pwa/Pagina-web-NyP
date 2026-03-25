@@ -70,36 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Mobile Cities List (inyectada para evitar pelea con CSS del dropdown) ---
-    const navDropdownEl = document.querySelector('.nav-links .nav-dropdown');
-    if (navDropdownEl) {
-        const mobileCities = document.createElement('div');
-        mobileCities.className = 'mobile-cities-list';
-        mobileCities.innerHTML = `
-            <span class="mobile-cities-label">Ciudades</span>
-            <div class="mobile-cities-box">
-                <a href="puebla.html">
-                    <span class="city-icon" style="background:var(--color-pink-light);color:var(--color-pink-strong)"><i class="fas fa-location-dot"></i></span> Puebla
-                </a>
-                <a href="cdmx.html">
-                    <span class="city-icon" style="background:var(--color-cyan-light);color:var(--color-cyan)"><i class="fas fa-city"></i></span> CDMX
-                </a>
-                <a href="queretaro.html">
-                    <span class="city-icon" style="background:var(--color-yellow-light);color:#D97706"><i class="fas fa-monument"></i></span> Querétaro
-                </a>
-                <a href="xalapa.html">
-                    <span class="city-icon" style="background:var(--color-pink-light);color:var(--color-pink)"><i class="fas fa-tree"></i></span> Xalapa
-                </a>
-            </div>`;
-        // Insertar justo después del nav-dropdown
-        navDropdownEl.insertAdjacentElement('afterend', mobileCities);
-
-        // Cerrar menú al seleccionar ciudad
-        mobileCities.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-    }
-
 
     // --- Sticky Navbar Effect ---
     const navbar = document.querySelector('.navbar');
