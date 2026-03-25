@@ -55,7 +55,37 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                // Cerrar dropdown de ciudades si el menú se cierra
+                const dropdown = document.querySelector('.nav-dropdown');
+                if (dropdown) dropdown.classList.remove('mobile-open');
             }
+        });
+    }
+
+    // --- Mobile Dropdown Toggle (Ciudades) ---
+    const navDropdown = document.querySelector('.nav-dropdown');
+    if (navDropdown) {
+        const dropdownTrigger = navDropdown.querySelector('a');
+        dropdownTrigger.addEventListener('click', (e) => {
+            // Solo actuar en móvil
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                navDropdown.classList.toggle('mobile-open');
+            }
+        });
+
+        // Cerrar dropdown al tocar fuera
+        document.addEventListener('click', (e) => {
+            if (!navDropdown.contains(e.target)) {
+                navDropdown.classList.remove('mobile-open');
+            }
+        });
+
+        // Cerrar dropdown al seleccionar una ciudad
+        navDropdown.querySelectorAll('.dropdown-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navDropdown.classList.remove('mobile-open');
+            });
         });
     }
 
