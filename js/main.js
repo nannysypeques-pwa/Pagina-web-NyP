@@ -44,10 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
+    const closeMobileMenu = () => {
+        navLinks.classList.remove('active');
+        const icon = menuBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    };
+
     if (menuBtn) {
         menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            // Cambiar icono
             const icon = menuBtn.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -55,39 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
-                // Cerrar dropdown de ciudades si el menú se cierra
-                const dropdown = document.querySelector('.nav-dropdown');
-                if (dropdown) dropdown.classList.remove('mobile-open');
             }
+        });
+
+        // Cerrar menú al navegar (incluye links de ciudades)
+        navLinks.querySelectorAll('a[href]:not([href="#"])').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
         });
     }
 
-    // --- Mobile Dropdown Toggle (Ciudades) ---
-    const navDropdown = document.querySelector('.nav-dropdown');
-    if (navDropdown) {
-        const dropdownTrigger = navDropdown.querySelector('a');
-        dropdownTrigger.addEventListener('click', (e) => {
-            // Solo actuar en móvil
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                navDropdown.classList.toggle('mobile-open');
-            }
-        });
-
-        // Cerrar dropdown al tocar fuera
-        document.addEventListener('click', (e) => {
-            if (!navDropdown.contains(e.target)) {
-                navDropdown.classList.remove('mobile-open');
-            }
-        });
-
-        // Cerrar dropdown al seleccionar una ciudad
-        navDropdown.querySelectorAll('.dropdown-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navDropdown.classList.remove('mobile-open');
-            });
-        });
-    }
 
     // --- Sticky Navbar Effect ---
     const navbar = document.querySelector('.navbar');
