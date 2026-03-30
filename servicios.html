@@ -202,22 +202,22 @@
             </a>
             <nav class="nav-links">
                 <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Diferenciadores</a>
-                <a href="servicios.html" style="color: var(--color-pink); font-weight: 700;">Servicios</a>
+                <a href="nosotros.html" onclick="ttq.track('ViewContent')">Diferenciadores</a>
+                <a href="servicios.html" style="color: var(--color-pink); font-weight: 700;" onclick="ttq.track('ViewContent')">Servicios</a>
                                 <!-- Ciudades - Versión Escritorio -->
                 <div class="nav-dropdown desktop-only">
                     <a href="#">Ciudades</a>
                     <div class="dropdown-menu">
-                        <a href="puebla.html"><span class="city-icon"
+                        <a href="puebla.html" onclick="ttq.track('ViewContent')"><span class="city-icon"
                                 style="background: var(--color-pink-light); color: var(--color-pink-strong);"><i
                                     class="fas fa-location-dot"></i></span> Puebla</a>
-                        <a href="cdmx.html"><span class="city-icon"
+                        <a href="cdmx.html" onclick="ttq.track('ViewContent')"><span class="city-icon"
                                 style="background: var(--color-cyan-light); color: var(--color-cyan);"><i
                                     class="fas fa-city"></i></span> CDMX</a>
-                        <a href="queretaro.html"><span class="city-icon"
+                        <a href="queretaro.html" onclick="ttq.track('ViewContent')"><span class="city-icon"
                                 style="background: var(--color-yellow-light); color: #D97706;"><i
                                     class="fas fa-monument"></i></span> Querétaro</a>
-                        <a href="xalapa.html"><span class="city-icon"
+                        <a href="xalapa.html" onclick="ttq.track('ViewContent')"><span class="city-icon"
                                 style="background: var(--color-pink-light); color: var(--color-pink);"><i
                                     class="fas fa-tree"></i></span> Xalapa</a>
                     </div>
@@ -227,23 +227,23 @@
                 <div class="mobile-cities-container mobile-only">
                     <span class="mobile-cities-label">Ciudades</span>
                     <div class="mobile-cities-grid">
-                        <a href="puebla.html"><span class="city-icon"
+                        <a href="puebla.html" onclick="ttq.track('ViewContent')"><span class="city-icon"
                                 style="background: var(--color-pink-light); color: var(--color-pink-strong);"><i
                                     class="fas fa-location-dot"></i></span> Puebla</a>
-                        <a href="cdmx.html"><span class="city-icon"
+                        <a href="cdmx.html" onclick="ttq.track('ViewContent')"><span class="city-icon"
                                 style="background: var(--color-cyan-light); color: var(--color-cyan);"><i
                                     class="fas fa-city"></i></span> CDMX</a>
-                        <a href="queretaro.html"><span class="city-icon"
+                        <a href="queretaro.html" onclick="ttq.track('ViewContent')"><span class="city-icon"
                                 style="background: var(--color-yellow-light); color: #D97706;"><i
                                     class="fas fa-monument"></i></span> Querétaro</a>
-                        <a href="xalapa.html"><span class="city-icon"
+                        <a href="xalapa.html" onclick="ttq.track('ViewContent')"><span class="city-icon"
                                 style="background: var(--color-pink-light); color: var(--color-pink);"><i
                                     class="fas fa-tree"></i></span> Xalapa</a>
                     </div>
                 </div>
-                <a href="proceso.html">Cómo Contratar</a>
+                <a href="proceso.html" onclick="ttq.track('ViewContent')">Cómo Contratar</a>
                 <a href="blog.html" class="nav-hidden">Blog</a>
-                <a href="senanny.html" style="color: var(--color-pink); font-weight: bold;"><i class="fas fa-heart"></i>
+                <a href="senanny.html" style="color: var(--color-pink); font-weight: bold;" onclick="ttq.track('ViewContent', { content_name: 'reclutamiento_nanny' });"><i class="fas fa-heart"></i>
                     Sé Nanny</a>
                 <a href="contacto.html" class="btn-primary">Contacto</a>
             </nav>
@@ -291,7 +291,7 @@
                     </ul>
 
                     <a href="https://wa.me/522224021886?text=Hola,%20me%20interesa%20mucho%20contratar%20y%20saber%20más%20sobre%20el%20servicio%20de%20neuronanny%20para%20mi%20peque%20de%20______%20en%20la%20ciudad%20de%20_________,%20por%20favor."
-                        class="btn-outline" target="_blank">Cotizar mi Neuronanny</a>
+                        class="btn-outline" target="_blank" onclick="ttq.track('Contact')">Cotizar mi Neuronanny</a>
                 </div>
                 <div class="service-visual">
                     <div class="visual-blob"></div>
@@ -320,7 +320,7 @@
 
                     <a href="https://wa.me/522224021886?text=Hola,%20me%20gustaría%20agendar%20una%20Nanny%20Eventual,%20por%20favor."
                         class="btn-outline btn-cyan-hover"
-                        style="border-color: var(--color-cyan); color: var(--color-cyan);" target="_blank">Agendar Nanny
+                        style="border-color: var(--color-cyan); color: var(--color-cyan);" target="_blank" onclick="ttq.track('Contact')">Agendar Nanny
                         Eventual</a>
                 </div>
                 <div class="service-visual">
@@ -348,7 +348,7 @@
 
                     <a href="https://wa.me/522224021886?text=Hola,%20me%20gustaría%20agendar%20el%20servicio%20de%20Nanny%20Nocturna,%20por%20favor."
                         class="btn-outline btn-yellow-hover" style="border-color: #D97706; color: #D97706;"
-                        target="_blank">Agendar Nanny
+                        target="_blank" onclick="ttq.track('Contact')">Agendar Nanny
                         Nocturna</a>
                 </div>
                 <div class="service-visual">
@@ -377,7 +377,7 @@
 
                     <a href="https://wa.me/522224021886?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20el%20servicio%20de%20Miss%20Nanny,%20por%20favor."
                         class="btn-outline" style="border-color: var(--color-pink); color: var(--color-pink);"
-                        target="_blank">Cotizar Miss Nanny</a>
+                        target="_blank" onclick="ttq.track('Contact')">Cotizar Miss Nanny</a>
                 </div>
                 <div class="service-visual">
                     <div class="visual-blob"></div>
@@ -406,7 +406,7 @@
 
                     <a href="https://wa.me/522224021886?text=Hola,%20quisiera%20cotizar%20un%20paquete%20de%20nannies%20para%20mi%20evento,%20por%20favor."
                         class="btn-primary" style="background: var(--color-cyan); border-color: var(--color-cyan);"
-                        target="_blank">Cuidamos tu evento</a>
+                        target="_blank" onclick="ttq.track('Contact')">Cuidamos tu evento</a>
                 </div>
                 <div class="service-visual">
                     <div class="visual-blob" style="background: var(--color-cyan);"></div>
@@ -479,7 +479,7 @@
                 necesitan.</p>
             <a href="https://wa.me/522224021886?text=Hola,%20necesito%20ayuda%20para%20elegir%20el%20servicio%20adecuado%20para%20mi%20familia,%20por%20favor"
                 class="btn-primary btn-large"
-                style="background: var(--color-white); color: var(--color-pink) !important;" target="_blank">Cotiza
+                style="background: var(--color-white); color: var(--color-pink) !important;" target="_blank" onclick="ttq.track('Contact')">Cotiza
                 GRATIS</a>
         </div>
     </section>
@@ -513,12 +513,12 @@
             <div class="footer-contact">
                 <h4>Contacto</h4>
                 <p><a href="https://wa.me/522224021886?text=Hola,%20vi%20su%20información%20en%20su%20pagina%20web%20y%20me%20gustaría%20resolver%20algunas%20dudas"
-                        target="_blank"><i class="fas fa-phone"></i> <strong>Ventas:</strong> 222 402 1886</a></p>
+                        target="_blank" onclick="ttq.track('Contact')"><i class="fas fa-phone"></i> <strong>Ventas:</strong> 222 402 1886</a></p>
                 <p><a href="https://wa.me/522203215455?text=Hola,%20me%20gustaría%20poder%20hacer%20una%20alianza%20con%20ustedes%20para%20crecer%20juntos"
                         target="_blank"><i class="fas fa-phone-alt"></i> <strong>RP:</strong> 220 321 5455</a></p>
                 <p><a href="mailto:nannysypeques@gmail.com"><i class="fas fa-envelope"></i> nannysypeques@gmail.com</a>
                 </p>
-                <p><a href="http://reclutamiento.nannysypeques.com.mx" target="_blank"><i class="fas fa-briefcase"></i>
+                <p><a href="http://reclutamiento.nannysypeques.com.mx" target="_blank" onclick="ttq.track('CompleteRegistration')"><i class="fas fa-briefcase"></i>
                         reclutamiento.nannysypeques.com.mx</a></p>
             </div>
         </div>
