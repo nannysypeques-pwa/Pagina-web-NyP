@@ -155,7 +155,9 @@
                 </div>
                 <a href="proceso.html" onclick="ttq.track('ViewContent')">Cómo Contratar</a>
                 <a href="blog.html" class="nav-hidden">Blog</a>
-                <a href="senanny.html" style="color: var(--color-pink); font-weight: bold;" onclick="ttq.track('ViewContent', { content_name: 'reclutamiento_nanny' });"><i class="fas fa-heart"></i>
+                <a href="senanny.html" style="color: var(--color-pink); font-weight: bold;"
+                    onclick="ttq.track('ViewContent', { content_name: 'reclutamiento_nanny' });"><i
+                        class="fas fa-heart"></i>
                     Sé Nanny</a>
                 <a href="contacto.html" class="btn-primary">Contacto</a>
             </nav>
@@ -230,7 +232,8 @@
                     </div>
                 </div>
                 <div style="margin-top: 2rem;">
-                    <a href="nosotros.html" class="btn-outline" onclick="ttq.track('ViewContent')">Ver todos los diferenciadores</a>
+                    <a href="nosotros.html" class="btn-outline" onclick="ttq.track('ViewContent')">Ver todos los
+                        diferenciadores</a>
                 </div>
             </div>
         </div>
@@ -295,10 +298,139 @@
                     <p>Atención prioritaria y de emergencia por cambios de último minuto o imprevistos de máxima
                         prioridad. (Sujeto a disponibilidad)</p>
                 </div>
+
+                <!-- Servicio 7 - Eventos -->
+                <div class="service-card theme-pink"
+                    style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <div class="service-icon"><i class="fas fa-gift"></i></div>
+                        <h3>Servicio para Eventos</h3>
+                        <p>Nuestra misión es ofrecer el servicio integral para tus eventos, armando un paquete a la
+                            medida con niñeras y actividades para acompañar a los pequeños. ¡Aquí los niños se divierten
+                            muchísimo mientras los papás también disfrutan del evento con total tranquilidad!</p>
+                    </div>
+                    <div style="flex: 2; min-width: 100%; position: relative;" class="desktop-flex-2">
+                        <style>
+                            @media (min-width: 768px) {
+                                .desktop-flex-2 {
+                                    flex: 2 !important;
+                                    min-width: 300px !important;
+                                }
+                            }
+
+                            .carousel-arrows-container {
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                            }
+
+                            .event-carousel {
+                                display: flex;
+                                gap: 1.5rem;
+                                overflow-x: auto;
+                                scroll-snap-type: x mandatory;
+                                padding: 1rem 0;
+                                scrollbar-width: none;
+                                -ms-overflow-style: none;
+                            }
+
+                            .event-carousel::-webkit-scrollbar {
+                                display: none;
+                            }
+
+                            .event-carousel img {
+                                scroll-snap-align: start;
+                                border-radius: 16px;
+                                width: 85%;
+                                max-width: 320px;
+                                height: 220px;
+                                object-fit: cover;
+                                flex-shrink: 0;
+                                box-shadow: var(--shadow-sm);
+                                transition: transform 0.3s ease;
+                            }
+
+                            .event-carousel img:hover {
+                                transform: scale(1.02);
+                            }
+
+                            .arrow-btn {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                background: white;
+                                border: none;
+                                width: 45px;
+                                height: 45px;
+                                border-radius: 50%;
+                                box-shadow: var(--shadow-md);
+                                cursor: pointer;
+                                z-index: 10;
+                                color: var(--color-pink);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                transition: var(--transition);
+                            }
+
+                            .arrow-btn:hover {
+                                background: var(--color-pink-soft);
+                                transform: translateY(-50%) scale(1.1);
+                            }
+
+                            .arrow-prev {
+                                left: -20px;
+                            }
+
+                            .arrow-next {
+                                right: -20px;
+                            }
+
+                            @media (max-width: 768px) {
+                                .arrow-btn {
+                                    display: none;
+                                }
+
+                                /* On mobile, swiping is natural */
+                            }
+                        </style>
+                        <div class="carousel-arrows-container">
+                            <button class="arrow-btn arrow-prev" onclick="scrollIndexCarousel(-1)"
+                                aria-label="Anterior">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+
+                            <div class="event-carousel" id="indexEventCarousel">
+                                <img src="img/1.jpeg" alt="Niños divirtiéndose jugando en un evento">
+                                <img src="img/10.jpg" alt="Actividad para fiesta">
+                                <img src="img/2.jpeg" alt="Actividades de arte y pintura en eventos">
+                                <img src="img/4.jpeg" alt="Juegos interactivos y diversión">
+                                <img src="img/5.jpeg" alt="Cuidado en eventos">
+                                <img src="img/6.jpeg" alt="Niñera animando en fiesta">
+                            </div>
+
+                            <button class="arrow-btn arrow-next" onclick="scrollIndexCarousel(1)"
+                                aria-label="Siguiente">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <script>
+                            function scrollIndexCarousel(direction) {
+                                const carousel = document.getElementById('indexEventCarousel');
+                                const scrollAmount = carousel.clientWidth * 0.8;
+                                carousel.scrollBy({
+                                    left: direction * scrollAmount,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        </script>
+                    </div>
+                </div>
             </div>
 
             <div class="center" style="margin-top: 4rem;">
-                <a href="servicios.html" class="btn-primary btn-large" onclick="ttq.track('ViewContent')">Conoce más sobre nuestros servicios</a>
+                <a href="servicios.html" class="btn-primary btn-large" onclick="ttq.track('ViewContent')">Conoce más
+                    sobre nuestros servicios</a>
             </div>
         </div>
     </section>
@@ -350,9 +482,11 @@
             <div class="center"
                 style="margin-top: 3rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
                 <a href="https://wa.me/522224021886?text=Hola,%20quisiera%20platicarles%20más%20sobre%20mi%20peque%20para%20que%20puedan%20asignarme%20a%20mi%20nanny%20ideal,%20por%20favor"
-                    class="btn-primary btn-large" target="_blank" onclick="ttq.track('Contact')">Inicia el proceso hoy</a>
+                    class="btn-primary btn-large" target="_blank" onclick="ttq.track('Contact')">Inicia el proceso
+                    hoy</a>
                 <a href="proceso.html" class="btn-outline btn-large"
-                    style="border-color: var(--color-pink); color: var(--color-pink);" onclick="ttq.track('ViewContent')">Quiero saber más</a>
+                    style="border-color: var(--color-pink); color: var(--color-pink);"
+                    onclick="ttq.track('ViewContent')">Quiero saber más</a>
             </div>
         </div>
     </section>
@@ -855,12 +989,14 @@
             <div class="footer-contact">
                 <h4>Contacto</h4>
                 <p><a href="https://wa.me/522224021886?text=Hola,%20vi%20su%20información%20en%20su%20pagina%20web%20y%20me%20gustaría%20resolver%20algunas%20dudas"
-                        target="_blank" onclick="ttq.track('Contact')"><i class="fas fa-phone"></i> <strong>Ventas:</strong> 222 402 1886</a></p>
+                        target="_blank" onclick="ttq.track('Contact')"><i class="fas fa-phone"></i>
+                        <strong>Ventas:</strong> 222 402 1886</a></p>
                 <p><a href="https://wa.me/522203215455?text=Hola,%20me%20gustaría%20poder%20hacer%20una%20alianza%20con%20ustedes%20para%20crecer%20juntos"
                         target="_blank"><i class="fas fa-phone-alt"></i> <strong>RP:</strong> 220 321 5455</a></p>
                 <p><a href="mailto:nannysypeques@gmail.com"><i class="fas fa-envelope"></i> nannysypeques@gmail.com</a>
                 </p>
-                <p><a href="http://reclutamiento.nannysypeques.com.mx" target="_blank" onclick="ttq.track('CompleteRegistration')"><i class="fas fa-briefcase"></i>
+                <p><a href="http://reclutamiento.nannysypeques.com.mx" target="_blank"
+                        onclick="ttq.track('CompleteRegistration')"><i class="fas fa-briefcase"></i>
                         reclutamiento.nannysypeques.com.mx</a></p>
             </div>
         </div>
