@@ -305,8 +305,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const mensaje = `Hola soy ${nombre}, escribo de la ciudad de ${ciudad} y mi peque tiene ${edad} y estoy buscando ${busqueda}`;
 
-            // Número especificado: 222 402 1886 (código país 52)
-            const telefono = '522224021886';
+            // Número especificado: 221 636 5794 (código país 52)
+            const telefono = '522216365794';
             const whatsappUrl = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
             // Meta Pixel Lead tracking
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Floating WhatsApp Button ---
-    const floatWAPhone = '522224021886';
+    const floatWAPhone = '522216365794';
     const floatWAMsg = 'Hola, quisiera encontrar a mi nanny ideal';
     const floatWAUrl = `https://wa.me/${floatWAPhone}?text=${encodeURIComponent(floatWAMsg)}`;
 
